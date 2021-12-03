@@ -2,9 +2,9 @@ Link project Github
 https://github.com/nntrung47/CTDL-exam.git
 
 Folder drive mình làm việc
-https://docs.google.com/document/d/1b0kQ3u4Na4-klTZ9Jz9w2sYYLAeJq7xp/edit?usp=sharing&ouid=100720102958304095804&rtpof=true&sd=true
+https://drive.google.com/drive/folders/1SmLnJoLNhE0Qz0L5egw3N2rln8Ky5ne4?usp=sharing
 
-Có file
+Các file trong folder Drive
 Hướng dẫn Github
 Thảo luận CTDL
 
