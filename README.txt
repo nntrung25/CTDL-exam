@@ -11,4 +11,5 @@ Thảo luận CTDL
 
 Quy định code: 
 1. Phải ghi comment cho từng nhóm câu lệnh. Để người khác đọc có thể hiểu
-2. 
+2. Trước khi push nhớ pull để tránh xung đột code
+3.
