@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CTDL-exam/1.0.0": {
+        "runtime": {
+          "CTDL-exam.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CTDL-exam/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

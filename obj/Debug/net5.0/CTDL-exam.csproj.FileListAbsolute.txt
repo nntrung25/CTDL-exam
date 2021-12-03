@@ -1,0 +1,16 @@
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.exe
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.deps.json
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.runtimeconfig.json
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.runtimeconfig.dev.json
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.dll
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\ref\CTDL-exam.dll
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\bin\Debug\net5.0\CTDL-exam.pdb
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.csproj.AssemblyReference.cache
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.GeneratedMSBuildEditorConfig.editorconfig
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.AssemblyInfoInputs.cache
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.AssemblyInfo.cs
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.csproj.CoreCompileInputs.cache
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.dll
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\ref\CTDL-exam.dll
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.pdb
+E:\LEARN\Online\CTDLGT bt\CTDL-exam\obj\Debug\net5.0\CTDL-exam.genruntimeconfig.cache

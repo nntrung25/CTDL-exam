@@ -6,7 +6,12 @@ namespace CTDL_exam
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi Trung!");
+            
+            Console.Clear();
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            
+            Console.WriteLine("CTDL exam");
         }
     }
 }
