@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\nntru\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+      "projectUniqueName": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
       "projectName": "CTDL-exam",
-      "projectPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\obj\\",
+      "projectPath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+      "packagesPath": "C:\\Users\\nntru\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nntru\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
