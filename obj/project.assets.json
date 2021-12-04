@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\LEARN\\Online\\CTDLGT bt\\CTDL-exam\\CTDL-exam.csproj",
+      "projectUniqueName": "E:\\Downloads\\CTDL-exam\\CTDL-exam.csproj",
       "projectName": "CTDL-exam",
-      "projectPath": "E:\\LEARN\\Online\\CTDLGT bt\\CTDL-exam\\CTDL-exam.csproj",
+      "projectPath": "E:\\Downloads\\CTDL-exam\\CTDL-exam.csproj",
       "packagesPath": "C:\\Users\\nntru\\.nuget\\packages\\",
-      "outputPath": "E:\\LEARN\\Online\\CTDLGT bt\\CTDL-exam\\obj\\",
+      "outputPath": "E:\\Downloads\\CTDL-exam\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nntru\\AppData\\Roaming\\NuGet\\NuGet.Config"
