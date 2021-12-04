@@ -12,9 +12,9 @@ namespace CTDL_exam
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             
             Console.WriteLine("CTDL exam");
-            Console.WriteLine("hello Nhóm");
+            Console.WriteLine("hello tui nè");
             
-            test
+            
         }
     }
 }
