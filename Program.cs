@@ -13,6 +13,8 @@ namespace CTDL_exam
             
             Console.WriteLine("CTDL exam");
             Console.WriteLine("hello Nhóm");
+            
+            test
         }
     }
 }
