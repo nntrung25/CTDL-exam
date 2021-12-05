@@ -14,7 +14,7 @@ namespace CTDL_exam
             Console.WriteLine("CTDL exam");
             Console.WriteLine("hello tui nè");
             System.Console.WriteLine("Hello world");
-            System.Console.Writeline("Tin ne duoc chua");
+            System.Console.WriteLine("Tin ne duoc chua");
             System.Console.WriteLine("Tao ne");
             System.Console.WriteLine("test dn");
             
