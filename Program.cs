@@ -14,8 +14,6 @@ namespace CTDL_exam
             
             Console.WriteLine("CTDL exam");
 
-
-            
         }
     }
 }
