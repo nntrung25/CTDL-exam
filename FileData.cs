@@ -2,7 +2,7 @@ using System;
 using System.IO;
 
 
-namespace nhap0
+namespace CTDL_exam
 {
     class FileData
     {
