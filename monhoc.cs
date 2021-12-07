@@ -3,7 +3,7 @@ using System;
 
 namespace CTDL_exam
 {
-    class monhoc
+    public class monhoc
     {
         // id, tên môn, số TC, bắt đầu, kết thúc, gv
 
@@ -13,8 +13,9 @@ namespace CTDL_exam
         private string start;
         private string end;
         private string gv;
+        private float diem;
 
-        public monhoc(string id, string name, int tc, string start, string end, string gv)
+        public monhoc(string id, string name, int tc, string start, string end, string gv, float diem)
         {
             this.id = id;
             this.name = name;
@@ -22,6 +23,17 @@ namespace CTDL_exam
             this.start = start;
             this.end = end;
             this.gv = gv;
+            this.diem = diem;
+        }
+
+        public string getID()
+        {
+            return this.id;
+        }
+
+        public string getName()
+        {
+            return this.name;
         }
 
         public string getStart()
@@ -34,14 +46,14 @@ namespace CTDL_exam
             return this.end;
         }
 
-        public string getName()
-        {
-            return this.name;
-        }
-
         public string getTeacher()
         {
             return this.gv;
+        }
+
+        public float getDIEM()
+        {
+            return this.diem;
         }
 
         public override string ToString()
