@@ -13,9 +13,10 @@ namespace CTDL_exam
         private string start;
         private string end;
         private string gv;
-        private float diem;
+        private float gpa;
+        
 
-        public monhoc(string id, string name, int tc, string start, string end, string gv, float diem)
+        public monhoc(string id, string name, int tc, string start, string end, string gv, float gpa)
         {
             this.id = id;
             this.name = name;
@@ -23,7 +24,25 @@ namespace CTDL_exam
             this.start = start;
             this.end = end;
             this.gv = gv;
-            this.diem = diem;
+            this.gpa = gpa;
+        }
+
+        public string changeInfo(monhoc a, monhoc b)
+        {
+            monhoc temp;
+            temp = a;
+            a = b;
+            b = temp;
+            string n = a.getID();
+            string m = b.getID();
+            a.ChangeID(m);
+            b.ChangeID(n);
+            return "";
+        }
+        public string ChangeID(string idchange)
+        {
+            this.id = idchange;
+            return idchange;
         }
 
         public string getID()
@@ -34,6 +53,11 @@ namespace CTDL_exam
         public string getName()
         {
             return this.name;
+        }
+
+        public int getTC()
+        {
+            return this.tc;
         }
 
         public string getStart()
@@ -51,14 +75,19 @@ namespace CTDL_exam
             return this.gv;
         }
 
-        public float getDIEM()
+        public float getGPA()
         {
-            return this.diem;
+            return this.gpa;
         }
 
         public override string ToString()
         {
-            return string.Format("Môn {0}, mã môn học {1}, số tín chỉ {2}\n Giờ bắt đầu {3}, giờ kết thúc {4}\nGiảng viên {5}", this.name, this.id, this.tc, this.start, this.end, this.gv);
+            string a;
+            a = string.Format("\nMôn {0}, mã môn học {1}, số tín chỉ {2}", this.name, this.id, this.tc);
+            a = a + string.Format("\nGiờ bắt đầu {0}, giờ kết thúc {1}", this.start, this.end);
+            a = a + string.Format("\nGiảng viên {0}", this.gv);
+            
+            return a;
         }
 
     }
