@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AnpTe5PzAYwN8wdQTj28BOQmZTVKEO5OF4HwB4XrkdQaiNrlGr7v6KdFHPG5+x2D+rySIYYKK1cmZv5WUbeYYg==",
+  "dgSpecHash": "DA69zMUZKjSn3zPgbrrBZe3/WtisAhvlTmmJrdk5Hfbsye8yeiwuoN7n1Gix//j7psFDTr+7NEktXqX+md2biw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

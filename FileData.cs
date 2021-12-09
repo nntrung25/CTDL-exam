@@ -43,7 +43,7 @@ namespace CTDL_exam
 
         static int i = 0;
         // Chương trình phụ: Chương trình con của chuyển cây thành mảng
-        public static void WriteInOrder(Node parent, string[,] array)
+        private static void WriteInOrder(Node parent, string[,] array)
         {
             if (parent != null)
             {
@@ -61,7 +61,7 @@ namespace CTDL_exam
         }
 
         // Chương trình phụ: chuyển cây thành mảng
-        public static void TreeToArray (BinarySearchTree tree, string[,] array, int p)
+        private static void TreeToArray (BinarySearchTree tree, string[,] array, int p)
         {
             Node parent = tree.Root;
             FileData.WriteInOrder(parent, array);
@@ -98,7 +98,7 @@ namespace CTDL_exam
         }
 
         // Chương trình phụ: Chuyển mảng về thành cây
-        public static void ArrayToTree (BinarySearchTree tree, string[,] array)
+        private static void ArrayToTree (BinarySearchTree tree, string[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
