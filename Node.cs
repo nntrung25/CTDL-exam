@@ -13,6 +13,7 @@ namespace CTDL_exam
     {
         public Node Root { get; set; }
         
+        // Đếm số phần tử trong cây Count
         public static int i;
         private void Count(Node parent)
         {
@@ -28,10 +29,11 @@ namespace CTDL_exam
         {
             i = 0;
             Count(parent);
-            return i + 1;
+            return i;
         }
 
-        // Thêm nút
+        
+        // Thêm phần tử
         public bool Insert(monhoc value)
         {
             Node before = null, after = this.Root;
@@ -61,6 +63,7 @@ namespace CTDL_exam
             return true;
         }
         
+
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
         public void TraverseInOrder(Node parent)
@@ -73,28 +76,7 @@ namespace CTDL_exam
             }
         }
 
-        // Duyệt cây tiền thứ tự
-        public void TraversePreOrder(Node parent)
-        {
-            if (parent != null)
-            {
-                Console.Write(parent.Data + " ");
-                TraversePreOrder(parent.LeftNode);
-                TraversePreOrder(parent.RightNode);
-            }
-        }
-
-        // Duyệt cây hậu thứ tự
-        public void TraversePostOrder(Node parent)
-        {
-            if (parent != null)
-            {
-                TraversePostOrder(parent.LeftNode);
-                TraversePostOrder(parent.RightNode);
-                Console.Write(parent.Data + " ");
-            }
-        }
-
+        // Nháp, để đó đi, mốt biết đâu cần xài
 /* //
         // Tìm nút có điểm min
         private float MinValueOfNode(Node node)
@@ -158,7 +140,7 @@ namespace CTDL_exam
         }
 // */
 
-        // Tìm nút
+        // Tìm nút theo mã môn
         public Node Find(string value)
         {  return this.Find(value, this.Root); }
         
@@ -175,6 +157,8 @@ namespace CTDL_exam
             return null;
         }
 
+
+        // Tìm phần tử min, là phần tử đầu tiên khi duyệt cây, mặc định sắp xếp theo mã môn
         private monhoc MinOfNode(Node node)
         {
             monhoc min = node.Data;
@@ -185,6 +169,7 @@ namespace CTDL_exam
             }
             return min;
         }
+
 
         // Xóa nút
         public void Remove(string value)
