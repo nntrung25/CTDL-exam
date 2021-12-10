@@ -61,7 +61,7 @@ namespace CTDL_exam
             return true;
         }
         
-        // Duyệt nút 
+        // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
         public void TraverseInOrder(Node parent)
         {
@@ -72,8 +72,29 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
-        
-        
+
+        // Duyệt cây tiền thứ tự
+        public void TraversePreOrder(Node parent)
+        {
+            if (parent != null)
+            {
+                Console.Write(parent.Data + " ");
+                TraversePreOrder(parent.LeftNode);
+                TraversePreOrder(parent.RightNode);
+            }
+        }
+
+        // Duyệt cây hậu thứ tự
+        public void TraversePostOrder(Node parent)
+        {
+            if (parent != null)
+            {
+                TraversePostOrder(parent.LeftNode);
+                TraversePostOrder(parent.RightNode);
+                Console.Write(parent.Data + " ");
+            }
+        }
+
 /* //
         // Tìm nút có điểm min
         private float MinValueOfNode(Node node)
@@ -185,6 +206,8 @@ namespace CTDL_exam
             } 
             return parent;
         }
+
+
 
 
     }
