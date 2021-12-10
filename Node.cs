@@ -75,6 +75,24 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
+        public void SapxepTruoc(Node parent)
+        {
+            if (parent != null)
+            {
+                Console.Write(parent.Data + " ");
+                SapxepTruoc(parent.RightNode);
+                SapxepTruoc(parent.RightNode);
+            }
+        }
+        public void Sapxepsau(Node parent)
+        {
+            if (parent != null)
+            {
+                Sapxepsau(parent.LeftNode);
+                Sapxepsau(parent.RightNode);
+                Console.Write(parent.Data + " ");
+            }
+        }
 
         // Nháp, để đó đi, mốt biết đâu cần xài
 /* //
