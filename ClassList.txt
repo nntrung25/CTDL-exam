@@ -1,0 +1,17 @@
+Tạo thêm class mới hay chức năng gì thì ghi cách sử dụng vô đây nha
+BinarySearchTree tree
+
+Program.cs
+    Themphantu(tree);
+monhoc.cs
+    Get...
+    ToString()
+FileData.cs
+    FileData.ReadFile(tree);
+    FileData.WriteFile(tree);
+Node.cs
+    tree.Remove("mã-môn");
+    tree.TraverseInOrder(tree.Root);
+    tree.Insert(monhoc value)
+    tree.CountNode(tree.Root);
+    tree.Find("mã-môn")

@@ -6,12 +6,13 @@ namespace CTDL_exam
 {
     class FileData
     {
-        static int n = 0, p, q = 7;
+        static int p, q = 7;
 
-        static string[,] monhoc;
+        // static string[,] monhoc;
         static string file = "text.txt";
 
-
+        // Ghi file text
+        // Chương trình ghi file chính
         public static void WriteFile(BinarySearchTree tree)
         {
             p = tree.CountNode(tree.Root);
@@ -40,36 +41,10 @@ namespace CTDL_exam
             sw.Close();
         }
 
-        public static void ReadFile(BinarySearchTree tree)
-        {
-            string[,] monhoc = new string[tree.CountNode(tree.Root),7];
-            TreeToArray(tree, monhoc, p);
-
-            StreamReader sr;
-            sr = File.OpenText(file);
-            string output = sr.ReadToEnd();
-            sr.Close();
-
-            string[] outputarr = output.Split('`');
-            
-            
-            string[] temp;
-            for (int i = 0; i < p; i++)
-            {
-                string a = outputarr[i];
-                temp = a.Split('~');
-
-                for (int j = 0; j < monhoc.GetLength(1); j++)
-                {
-                    monhoc[i,j] = temp[j];
-                }
-            }
-        }
-
         static int i = 0;
-        public static void WriteInOrder(Node parent, string[,] array)
+        // Chương trình phụ: Chương trình con của chuyển cây thành mảng
+        private static void WriteInOrder(Node parent, string[,] array)
         {
-            
             if (parent != null)
             {
                 WriteInOrder(parent.LeftNode, array);
@@ -81,19 +56,49 @@ namespace CTDL_exam
                 array[i,5] = parent.Data.getTeacher();
                 array[i,6] = Convert.ToString(parent.Data.getGPA());
                 i++;
-                WriteInOrder(parent.RightNode, array);
-                
+                WriteInOrder(parent.RightNode, array);  
             }
         }
 
-        public static void TreeToArray (BinarySearchTree tree, string[,] array, int p)
+        // Chương trình phụ: chuyển cây thành mảng
+        private static void TreeToArray (BinarySearchTree tree, string[,] array, int p)
         {
             Node parent = tree.Root;
             FileData.WriteInOrder(parent, array);
         }
 
+        // Đọc file text
+        // Chương trình đọc file chính
+        public static void ReadFile(BinarySearchTree tree)
+        {
+            StreamReader sr;
+            sr = File.OpenText(file);
+            string output = sr.ReadToEnd();
+            sr.Close();
 
-        public static void ArrayToTree (BinarySearchTree tree, string[,] array)
+            string[] outputarr = output.Split('`');
+            
+            p = outputarr.Length;
+            string[,] monhoc = new string[p, 7];
+
+            string[] temp = new string [7];
+
+            for (int i = 0; i < p; i++)
+            {
+                string a = outputarr[i];
+                temp = a.Split('~');
+                
+
+                for (int j = 0; j < monhoc.GetLength(1); j++)
+                {
+                    monhoc[i,j] = temp[j];
+                }
+            }
+            ArrayToTree(tree, monhoc);
+        }
+
+        // Chương trình phụ: Chuyển mảng về thành cây
+        private static void ArrayToTree (BinarySearchTree tree, string[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {

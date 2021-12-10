@@ -13,6 +13,7 @@ namespace CTDL_exam
     {
         public Node Root { get; set; }
         
+        // Đếm số phần tử trong cây Count
         public static int i;
         private void Count(Node parent)
         {
@@ -28,10 +29,11 @@ namespace CTDL_exam
         {
             i = 0;
             Count(parent);
-            return i + 1;
+            return i;
         }
 
-        // Thêm nút
+        
+        // Thêm phần tử
         public bool Insert(monhoc value)
         {
             Node before = null, after = this.Root;
@@ -61,6 +63,10 @@ namespace CTDL_exam
             return true;
         }
         
+<<<<<<< HEAD
+=======
+
+>>>>>>> 873f88c365626c4e1233b5eb69ef924ff555ecbf
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
         public void TraverseInOrder(Node parent)
@@ -73,6 +79,7 @@ namespace CTDL_exam
             }
         }
 
+<<<<<<< HEAD
         // Duyệt cây tiền thứ tự
         public void TraversePreOrder(Node parent)
         {
@@ -95,6 +102,9 @@ namespace CTDL_exam
             }
         }
 
+=======
+        // Nháp, để đó đi, mốt biết đâu cần xài
+>>>>>>> 873f88c365626c4e1233b5eb69ef924ff555ecbf
 /* //
         // Tìm nút có điểm min
         private float MinValueOfNode(Node node)
@@ -158,7 +168,7 @@ namespace CTDL_exam
         }
 // */
 
-        // Tìm nút
+        // Tìm nút theo mã môn
         public Node Find(string value)
         {  return this.Find(value, this.Root); }
         
@@ -175,6 +185,8 @@ namespace CTDL_exam
             return null;
         }
 
+
+        // Tìm phần tử min, là phần tử đầu tiên khi duyệt cây, mặc định sắp xếp theo mã môn
         private monhoc MinOfNode(Node node)
         {
             monhoc min = node.Data;
@@ -185,6 +197,7 @@ namespace CTDL_exam
             }
             return min;
         }
+
 
         // Xóa nút
         public void Remove(string value)
