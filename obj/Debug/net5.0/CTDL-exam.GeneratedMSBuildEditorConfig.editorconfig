@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = CTDL_exam
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\DELL\Desktop\CTDL-exam\
+=======
+build_property.ProjectDir = C:\Users\User\Desktop\CTDL-exam\
+>>>>>>> 3466b61976bbd964b5ce0e8b2f07bafc8980a479

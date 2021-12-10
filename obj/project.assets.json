@@ -8,11 +8,16 @@
     "net5.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\DELL\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+>>>>>>> 3466b61976bbd964b5ce0e8b2f07bafc8980a479
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
       "projectName": "CTDL-exam",
       "projectPath": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
@@ -22,6 +27,16 @@
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+      "projectName": "CTDL-exam",
+      "projectPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 3466b61976bbd964b5ce0e8b2f07bafc8980a479
       ],
       "originalTargetFrameworks": [
         "net5.0"
