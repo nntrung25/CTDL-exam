@@ -63,7 +63,6 @@ namespace CTDL_exam
             return true;
         }
         
-
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
         public void TraverseInOrder(Node parent)
@@ -209,6 +208,8 @@ namespace CTDL_exam
             } 
             return parent;
         }
+
+
 
 
     }
