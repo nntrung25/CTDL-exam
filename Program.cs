@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Diagnostics;
+using System.Collections.Generic;
+using System;
 
 namespace CTDL_exam
 {
@@ -9,6 +11,32 @@ namespace CTDL_exam
         // Code hàm chức năng ở dưới Hàm main
 =======
 =======
+        //Tìm kiếm theo tên môn học
+        static bool SearchTheoMonHoc(BinarySearchTree tree,string value)
+        {
+            FileData.ReadFile(tree);
+            if (tree.Root == null)
+            {
+                return false;
+            }
+            if (tree.Root != null)
+            {
+                if (tree.Root.Data.getName() == value)
+                {
+                    return true;
+                }
+                else if (value < tree.Root.Data.getName())
+                {
+                    return SearchTheoMonHoc(tree.Root.LeftNode, value);
+                }
+                else
+                {
+                    return SearchTheoMonHoc(tree.Root.RightNode, value);
+                }
+            }
+        }
+
+
         static void SapxepAphabet(BinarySearchTree tree,string value )
         {
 
@@ -98,6 +126,10 @@ namespace CTDL_exam
             SapxepAphabet(monhoctree,apha);
             
 >>>>>>> 3466b61976bbd964b5ce0e8b2f07bafc8980a479
+
+            //Tìm kiếm theo tên môn học
+            string value = Console.ReadLine();
+            
         }
     }
 }
