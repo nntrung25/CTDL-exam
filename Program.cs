@@ -7,6 +7,7 @@ namespace CTDL_exam
     class Program
     {
         public static BinarySearchTree monhoctree = new BinarySearchTree();
+        public static int len = 40;
         // Code hàm chức năng ở dưới Hàm main
 
         //Tìm kiếm theo tên môn học
