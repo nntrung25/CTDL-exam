@@ -128,6 +128,7 @@ namespace CTDL_exam
 >>>>>>> 3466b61976bbd964b5ce0e8b2f07bafc8980a479
 
             //Tìm kiếm theo tên môn học
+            System.Console.WriteLine("Nhập vào môn học cần tìm kiếm: ");
             string value = Console.ReadLine();
             if (SearchTheoMonHoc(monhoctree, value) == value)
             {
