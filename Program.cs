@@ -10,13 +10,13 @@ namespace CTDL_exam
             FileData.ReadFile(tree);
                if(string.Compare(value,tree.Root.Data.getName())==0)
               {
-                  tree.TraverseInOrder1(tree.Root);
+                  tree.SapxepTruoc(tree.Root);
               } else{
                   if(string.Compare(value,tree.Root.Data.getName())==-1)
                   {
                       tree.TraverseInOrder(tree.Root);
                   } else{
-                      tree.TraverseInOrder2(tree.Root);
+                      tree.Sapxepsau(tree.Root);
                   }
               }
               
@@ -75,7 +75,8 @@ namespace CTDL_exam
             
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
-            System.Console.WriteLine("Săp xếp theo chữ mà bạn muốn tìm ");
+            //Săp xếp theo môn chữ cái
+            System.Console.WriteLine("Săp xếp Môn theo chữ cái mà bạn muốn tìm ");
             System.Console.WriteLine("====================================");
             System.Console.WriteLine("Mời Bạn Nhập Kí Tự");
             string apha=Console.ReadLine();

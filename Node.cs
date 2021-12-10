@@ -75,21 +75,21 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
-        public void TraverseInOrder1(Node parent)
+        public void SapxepTruoc(Node parent)
         {
             if (parent != null)
             {
                 Console.Write(parent.Data + " ");
-                TraverseInOrder1(parent.RightNode);
-                TraverseInOrder1(parent.RightNode);
+                SapxepTruoc(parent.RightNode);
+                SapxepTruoc(parent.RightNode);
             }
         }
-        public void TraverseInOrder2(Node parent)
+        public void Sapxepsau(Node parent)
         {
             if (parent != null)
             {
-                TraverseInOrder2(parent.LeftNode);
-                TraverseInOrder2(parent.RightNode);
+                Sapxepsau(parent.LeftNode);
+                Sapxepsau(parent.RightNode);
                 Console.Write(parent.Data + " ");
             }
         }
