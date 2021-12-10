@@ -129,6 +129,16 @@ namespace CTDL_exam
 
             //Tìm kiếm theo tên môn học
             string value = Console.ReadLine();
+            if (SearchTheoMonHoc(monhoctree, value) == value)
+            {
+                System.Console.WriteLine("Môn " + monhoctree.Root.Data.getName());
+                System.Console.WriteLine("Mã môn học " + monhoctree.Root.Data.getID());
+                System.Console.WriteLine("Số tín chỉ " + monhoctree.Root.Data.getTC());
+                System.Console.WriteLine("Giờ bắt đầu " + monhoctree.Root.Data.getStar());
+                System.Console.WriteLine("Giờ kết thúc " + monhoctree.Root.Data.getEnd());
+                System.Console.WriteLine("Giảng viên " + monhoctree.Root.Data.getTeacher());
+                System.Console.WriteLine("Điểm " + monhoctree.Root.Data.getGPA());
+            }
             
         }
     }
