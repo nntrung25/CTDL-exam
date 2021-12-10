@@ -1,4 +1,4 @@
-Tạo thêm class mới hay chức năng gì thì ghi vô đây nha
+Tạo thêm class mới hay chức năng gì thì ghi cách sử dụng vô đây nha
 BinarySearchTree tree
 
 Program.cs

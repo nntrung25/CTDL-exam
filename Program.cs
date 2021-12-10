@@ -28,6 +28,7 @@ namespace CTDL_exam
             Console.InputEncoding = System.Text.Encoding.UTF8;
             BinarySearchTree monhoctree = new BinarySearchTree();
 
+            // Đọc file text lấy dữ liệu
             FileData.ReadFile(monhoctree);
             Console.WriteLine("Dữ liệu có sẵn");
             monhoctree.TraverseInOrder(monhoctree.Root);
