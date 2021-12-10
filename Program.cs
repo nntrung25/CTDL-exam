@@ -23,14 +23,6 @@ namespace CTDL_exam
 
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            Console.WriteLine("Hello Trung");
-
-=======
-            Console.WriteLine("Hi World");
->>>>>>> 08816dc73a2dd37d588e15abf5322f6f65412132
-
-
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.InputEncoding = System.Text.Encoding.UTF8;
