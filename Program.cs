@@ -4,6 +4,23 @@ namespace CTDL_exam
 {
     class Program
     {
+        static void SapxepAphabet(BinarySearchTree tree,string value )
+        {
+
+            FileData.ReadFile(tree);
+               if(string.Compare(value,tree.Root.Data.getName())==0)
+              {
+                  tree.TraverseInOrder1(tree.Root);
+              } else{
+                  if(string.Compare(value,tree.Root.Data.getName())==-1)
+                  {
+                      tree.TraverseInOrder(tree.Root);
+                  } else{
+                      tree.TraverseInOrder2(tree.Root);
+                  }
+              }
+              
+        }
         static void Themphantu (BinarySearchTree tree)
         {
             Console.Clear();
@@ -58,6 +75,12 @@ namespace CTDL_exam
             
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
+            System.Console.WriteLine("Săp xếp theo chữ mà bạn muốn tìm ");
+            System.Console.WriteLine("====================================");
+            System.Console.WriteLine("Mời Bạn Nhập Kí Tự");
+            string apha=Console.ReadLine();
+            SapxepAphabet(monhoctree,apha);
+            
         }
     }
 }

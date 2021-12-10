@@ -75,6 +75,24 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
+        public void TraverseInOrder1(Node parent)
+        {
+            if (parent != null)
+            {
+                Console.Write(parent.Data + " ");
+                TraverseInOrder1(parent.RightNode);
+                TraverseInOrder1(parent.RightNode);
+            }
+        }
+        public void TraverseInOrder2(Node parent)
+        {
+            if (parent != null)
+            {
+                TraverseInOrder2(parent.LeftNode);
+                TraverseInOrder2(parent.RightNode);
+                Console.Write(parent.Data + " ");
+            }
+        }
 
         // Nháp, để đó đi, mốt biết đâu cần xài
 /* //
