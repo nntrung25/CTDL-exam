@@ -31,6 +31,8 @@ namespace CTDL_exam
             Count(parent);
             return i;
         }
+        
+        
         //Sắp xếp theo ngày 
          public bool SapXep3(monhoc value)
         {
@@ -69,15 +71,8 @@ namespace CTDL_exam
                 tree3.SapXep3(parent.Data);
             }
         }
-        public void TraversePostOrder(Node parent)
-        {
-            if (parent != null)
-            {
-                TraversePostOrder(parent.LeftNode);
-                TraversePostOrder(parent.RightNode);
-                System.Console.WriteLine(parent.Data+" ");
-            }
-        }
+
+
         //Sắp xếp theo mã TC 
          public bool SapXep2(monhoc value)
         {
@@ -116,15 +111,7 @@ namespace CTDL_exam
                 TraversePreOrder1(parent.RightNode,tree2);
             }
         }
-        public void TraversePreOrder(Node parent)
-        {
-            if (parent != null)
-            {
-                System.Console.WriteLine(parent.Data+" ");
-                TraversePreOrder(parent.LeftNode);
-                TraversePreOrder(parent.RightNode);
-            }
-        }
+
         
         //Sắp xếp theo mã môn học
          public bool SapXep1(monhoc value)
@@ -207,84 +194,8 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
+
         
-        
-        public void Sapxepsau(Node parent)
-        {
-            if (parent != null)
-            {
-                Sapxepsau(parent.LeftNode);
-                Console.Write(parent.Data + " ");
-                Sapxepsau(parent.RightNode);
-            }
-        }
-        
-
-
-        // Nháp, để đó đi, mốt biết đâu cần xài
-        /* //
-                // Tìm nút có điểm min
-                private float MinValueOfNode(Node node)
-                {
-                    float minv = node.Data.getGPA();
-                    while (node.LeftNode != null)
-                    {
-                        minv = node.LeftNode.Data.getGPA();
-                        node = node.LeftNode;
-                    }
-                    return minv;
-                }
-                public float FindMin()
-                {
-                    return MinValueOfNode(this.Root);
-                }
-
-                // Tìm nút min kết hợp 2 hàm trên
-                public float FindMin2()
-                {
-                    Node current = Root;
-                    while (current.LeftNode != null)
-                        current = current.LeftNode;
-                    return current.Data.getGPA();
-                }
-
-                // Tìm nút có điểm max
-                private float MaxValueOfNode(Node node)
-                {
-                    float maxv = node.Data.getGPA();
-                    while (node.RightNode != null)
-                    {
-                        maxv = node.RightNode.Data.getGPA();
-                        node = node.RightNode;
-                    }
-                    return maxv;
-                }
-                public float FindMax()
-                {
-                    return MaxValueOfNode(this.Root);
-                }
-
-                // Tìm nút max kết hợp 2 hàm trên
-                public float FindMax2()
-                {
-                    Node current = Root;
-                    while (current.RightNode != null)
-                        current = current.RightNode;
-                    return current.Data.getGPA();
-                }
-
-                // Độ sâu của cây (chiều dài cây)
-                public int GetTreeDepth()
-                {
-                    return this.GetTreeDepth(this.Root);
-                }
-
-                private int GetTreeDepth(Node parent)
-                {
-                    return parent == null ? 0 : Math.Max(GetTreeDepth(parent.LeftNode), GetTreeDepth(parent.RightNode)) + 1;
-                }
-        // */
-
         // Tìm kiếm theo mã môn học
         public Node FindTheoMaMon(string value)
         { return this.FindTheoMaMon(value, this.Root); }

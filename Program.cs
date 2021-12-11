@@ -40,6 +40,19 @@ namespace CTDL_exam
             tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
         }
 
+        static void InMenu ()
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Hiển thị chi tiết một môn học");
+            Console.WriteLine("2. Thêm");
+            Console.WriteLine("3. Sửa");
+            Console.WriteLine("4. Xóa");
+            Console.WriteLine("5. Tìm kiếm theo mã môn");
+            Console.WriteLine("6. Tìm kiếm theo giảng viên");
+            Console.WriteLine("7. Sắp xếp");
+            Console.WriteLine("8. Điểm\n");
+
+        }
         static void Main(string[] args)
         {
 
@@ -54,39 +67,38 @@ namespace CTDL_exam
             Console.WriteLine("Dữ liệu có sẵn");
             monhoctree.TraverseInOrder(monhoctree.Root);
 
+            InMenu();
+            Console.Write("Chọn chức năng: ");
+            int n = int.Parse(Console.ReadLine());
 
-            Console.Write("\nCó muốn thêm môn học không ? (1: có, 0: không): ");
-            int a = int.Parse(Console.ReadLine());
-
-            if (a == 1)
+/* 
+            1. Hiển thị chi tiết một môn học
+            2. Thêm
+            3. Sửa
+            4. Xóa
+            5. Tìm kiếm mã môn
+            6. Tìm kiếm giảng viên
+            7. Sắp xếp
+            8. Điểm
+ */
+            switch (n)
             {
-                Themphantu(monhoctree);
-                Console.WriteLine("Các môn sau khi thêm");
-                monhoctree.TraverseInOrder(monhoctree.Root);
-            }
-
-            Console.Write("\nCó muốn xóa môn học không ? (1: có, 0: không): ");
-            a = int.Parse(Console.ReadLine());
-
-            if (a == 1)
-            {
-                Console.Write("Nhập mã môn muốn xóa: ");
+                case 1: 
+                case 2: Themphantu(monhoctree); break;
+                case 3:Console.Write("Nhập mã môn học cần chỉnh sửa: ");
+                string maMonHoc = Console.ReadLine();
+                Suaphantu(monhoctree, maMonHoc); break;
+                case 4: Console.Write("Nhập mã môn muốn xóa: ");
                 string del = Console.ReadLine();
-                monhoctree.Remove(del);
-                Console.WriteLine("Các môn sau khi xóa");
-                monhoctree.TraverseInOrder(monhoctree.Root);
-            }
-            // Sửa môn học
-            Console.Write("\nCó muốn sửa môn học không ? (1: có, 0: không): ");
-            a = int.Parse(Console.ReadLine());
-
-            if(a==1)
-            {
-            Console.Write("Nhập mã môn học cần chỉnh sửa: ");
-            string maMonHoc = Console.ReadLine();
-            Suaphantu(monhoctree, maMonHoc);
-            Console.WriteLine("Các môn sau khi sửa");
-            monhoctree.TraverseInOrder(monhoctree.Root);
+                monhoctree.Remove(del); break;
+                case 5: System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");
+            string value1 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data); break;
+                case 6:System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
+            string value2 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data); break;
+                case 7:
+                default: break;
             }
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
@@ -97,7 +109,7 @@ namespace CTDL_exam
             BinarySearchTree tree3=new BinarySearchTree();
             FileData.ReadFile(tree3);
             tree3.TraversePostOrder1(tree3.Root,tree3);
-            tree3.TraversePostOrder(tree3.Root);
+            tree3.TraverseInOrder(tree3.Root);
             
             System.Console.WriteLine("____________________");
             //Sắp xếp theo TC
@@ -105,7 +117,7 @@ namespace CTDL_exam
             BinarySearchTree tree2=new BinarySearchTree();
             FileData.ReadFile(tree2);
             tree2.TraversePreOrder1(tree2.Root,tree2);
-            tree2.TraversePreOrder(tree2.Root);
+            tree2.TraverseInOrder(tree2.Root);
             
             Console.WriteLine("____________________");
             //Săp xêp theo mã môn học
@@ -115,21 +127,6 @@ namespace CTDL_exam
             tree1.TraverseInOrder1(monhoctree.Root,tree1);
             tree1.TraverseInOrder(tree1.Root);
             
-            Console.WriteLine("____________________\n");
-            
-            //Tìm kiếm theo mã môn học
-            System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");
-            string value1 = Console.ReadLine();
-            System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data);
-
-            //Tìm kiếm theo tên giảng viên
-            System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
-            string value2 = Console.ReadLine();
-            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data); 
-            
-            
-
-
         }
     }
 }
