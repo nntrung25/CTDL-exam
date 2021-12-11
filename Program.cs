@@ -101,11 +101,17 @@ namespace CTDL_exam
                 monhoctree.TraverseInOrder(monhoctree.Root);
             }
             // Sửa môn học
+            Console.Write("\nCó muốn sửa môn học không ? (1: có, 0: không): ");
+            a = int.Parse(Console.ReadLine());
+
+            if(a==1)
+            {
             Console.Write("Nhập mã môn học cần chỉnh sửa: ");
             string maMonHoc = Console.ReadLine();
             Suaphantu(monhoctree, maMonHoc);
             Console.WriteLine("Các môn sau khi sửa");
             monhoctree.TraverseInOrder(monhoctree.Root);
+            }
 
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
