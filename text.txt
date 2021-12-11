@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Cslt~Co So Lap Trinh~3~13h~16h~Dang Ngoc Hoang Thanh~82`Ctdl~Cau Truc Du Lieu~3~13h~16h~Dang Ngoc Hoang Thanh~85`Eng~Tieng Anh~4~7h~11h~Tran Thi Phi~80
+=======
+Cslt~Co So Lap Trinh~3~13h~16h~Dang Ngoc Hoang Thanh~82`Ctdl~Cau Truc Du Lieu~3~13h~16h~Dang Ngoc Hoang Thanh~85`Eng~Tieng Anh~4~7h~11h~Tran Thi Phi~8
+>>>>>>> c0890928b64955730f5ea1f5e828701da9687b83

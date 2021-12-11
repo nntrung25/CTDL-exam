@@ -7,33 +7,8 @@ namespace CTDL_exam
     class Program
     {
         public static BinarySearchTree monhoctree = new BinarySearchTree();
+        public static int len = 40;
         // Code hàm chức năng ở dưới Hàm main
-
-        //Tìm kiếm theo tên môn học
-        static bool SearchTheoMonHoc(Node node,string value)
-        {
-            FileData.ReadFile(monhoctree);
-            if (monhoctree.Root == null)
-            {
-                return false;
-            }
-            else
-            {
-                if (monhoctree.Root.Data.getName() == value)
-                {
-                    return true;
-                }
-                else if (string.Compare(value, monhoctree.Root.Data.getName()) == -1)
-                {
-                    return SearchTheoMonHoc(monhoctree.Root.LeftNode, value);
-                }
-                else
-                {
-                    return SearchTheoMonHoc(monhoctree.Root.RightNode, value);
-                }
-            }
-        }
-
 
         static void SapxepAphabet(BinarySearchTree tree,string value )
         {
@@ -118,19 +93,18 @@ namespace CTDL_exam
             string apha=Console.ReadLine();
             SapxepAphabet(monhoctree,apha);
             
-            //Tìm kiếm theo tên môn học
-            System.Console.WriteLine("Nhập vào môn học cần tìm kiếm: ");
-            string value = Console.ReadLine();
-            if (SearchTheoMonHoc(monhoctree.Root, value) == true)
-            {
-                System.Console.WriteLine("Môn " + monhoctree.Root.Data.getName());
-                System.Console.WriteLine("Mã môn học " + monhoctree.Root.Data.getID());
-                System.Console.WriteLine("Số tín chỉ " + monhoctree.Root.Data.getTC());
-                System.Console.WriteLine("Giờ bắt đầu " + monhoctree.Root.Data.getStart());
-                System.Console.WriteLine("Giờ kết thúc " + monhoctree.Root.Data.getEnd());
-                System.Console.WriteLine("Giảng viên " + monhoctree.Root.Data.getTeacher());
-                System.Console.WriteLine("Điểm " + monhoctree.Root.Data.getGPA());
-            }
+            //Tìm kiếm theo mã môn học
+            System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");
+            string value1 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data);
+
+            //Tìm kiếm theo tên giảng viên
+            System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
+            string value2 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data);
+
+
+            //
             
         }
     }
