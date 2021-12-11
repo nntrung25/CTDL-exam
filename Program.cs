@@ -53,7 +53,10 @@ namespace CTDL_exam
             FileData.ReadFile(monhoctree);
             Console.WriteLine("Dữ liệu có sẵn");
             monhoctree.TraverseInOrder(monhoctree.Root);
-
+            //In tên môn học
+            FileData.ReadFile(monhoctree);
+            Console.WriteLine("Các môn học: ");
+            monhoctree.name(monhoctree.Root);
 
             Console.Write("\nCó muốn thêm môn học không ? (1: có, 0: không): ");
             int a = int.Parse(Console.ReadLine());
