@@ -157,22 +157,40 @@ namespace CTDL_exam
         }
 // */
 
-        // Tìm nút theo mã môn
-        public Node Find(string value)
-        {  return this.Find(value, this.Root); }
+        // Tìm kiếm theo mã môn học
+        public Node FindTheoMaMon(string value)
+        {  return this.FindTheoMaMon(value, this.Root); }
         
-        private Node Find(string value, Node parent)
+        private Node FindTheoMaMon(string value, Node parent)
         {
             if (parent != null)
             {
                 if (string.Compare(value, parent.Data.getID()) == 0) return parent;
                 if (string.Compare(value, parent.Data.getID()) == -1)
-                    return Find(value, parent.LeftNode);
+                    return FindTheoMaMon(value, parent.LeftNode);
                 else
-                    return Find(value, parent.RightNode);
+                    return FindTheoMaMon(value, parent.RightNode);
             }
             return null;
         }
+        
+        //Tìm kiếm theo tên giảng viên
+        public Node FindTheoGiangVien(string value)
+        {  return this.FindTheoGiangVien(value, this.Root); }
+        
+        private Node FindTheoGiangVien(string value, Node parent)
+        {
+            if (parent != null)
+            {
+                if (string.Compare(value, parent.Data.getTeacher()) == 0) return parent;
+                if (string.Compare(value, parent.Data.getTeacher()) == -1)
+                    return FindTheoGiangVien(value, parent.LeftNode);
+                else
+                    return FindTheoGiangVien(value, parent.RightNode);
+            }
+            return null;
+        }
+
 
 
         // Tìm phần tử min, là phần tử đầu tiên khi duyệt cây, mặc định sắp xếp theo mã môn
