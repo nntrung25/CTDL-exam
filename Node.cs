@@ -31,6 +31,8 @@ namespace CTDL_exam
             Count(parent);
             return i;
         }
+        
+        //Sắp xếp theo mã môn học
          public bool SapXep1(monhoc value)
         {
             Node before = null, after = this.Root;
