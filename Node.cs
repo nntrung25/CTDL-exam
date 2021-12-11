@@ -78,7 +78,7 @@ namespace CTDL_exam
                 System.Console.WriteLine(parent.Data+" ");
             }
         }
-        //Sắp xếp theo mã môn học 2
+        //Sắp xếp theo mã TC 
          public bool SapXep2(monhoc value)
         {
             Node before = null, after = this.Root;
