@@ -91,6 +91,22 @@ namespace CTDL_exam
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
             
+            System.Console.WriteLine("____________________");
+            //Sắp xếp theo Ngày
+            System.Console.WriteLine("Sắp xếp theo ngày ");
+            BinarySearchTree tree3=new BinarySearchTree();
+            FileData.ReadFile(tree3);
+            tree3.TraversePostOrder1(tree3.Root,tree3);
+            tree3.TraversePostOrder(tree3.Root);
+            
+            System.Console.WriteLine("____________________");
+            //Sắp xếp theo TC
+            System.Console.WriteLine("Sắp xếp theo TC ");
+            BinarySearchTree tree2=new BinarySearchTree();
+            FileData.ReadFile(tree2);
+            tree2.TraversePreOrder1(tree2.Root,tree2);
+            tree2.TraversePreOrder(tree2.Root);
+            
             Console.WriteLine("____________________");
             //Săp xêp theo mã môn học
             System.Console.WriteLine("Sắp xếp theo mã môn học ");
