@@ -99,13 +99,6 @@ namespace CTDL_exam
             FileData.ReadFile(tree1);
             tree1.TraverseInOrder(tree1.Root);
             tree1.TraverseInOrder1(tree1.Root,tree1);
-
-            //Săp xêp theo mã môn học
-            System.Console.WriteLine("Sắp xếp theo mã môn học ");
-            BinarySearchTree tree1=new BinarySearchTree();
-            FileData.ReadFile(tree1);
-            tree1.TraverseInOrder(tree1.Root);
-            tree1.TraverseInOrder1(tree1.Root,tree1);
             
             
             //Tìm kiếm theo mã môn học
