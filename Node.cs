@@ -207,7 +207,15 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
-        
+        public void name(Node parent)
+        {
+            if (parent != null)
+            {
+                name(parent.LeftNode);
+                Console.Write(parent.Data.getName()+ " ");
+                name(parent.RightNode);
+            }
+        }
         
         public void Sapxepsau(Node parent)
         {
