@@ -31,6 +31,43 @@ namespace CTDL_exam
             Count(parent);
             return i;
         }
+         public bool SapXep1(monhoc value)
+        {
+            Node before = null, after = this.Root;
+            while (after != null)
+            {
+                if (string.Compare(value.getName(), after.Data.getName()) == 0)
+                    return false;
+
+                before = after;
+                if (string.Compare(value.getName(), after.Data.getName()) == -1)
+                    after = after.LeftNode; //left? 
+                else
+                    after = after.RightNode; //right?
+            }
+
+            Node newNode = new Node();
+            newNode.Data = value;
+            if (this.Root == null) //empty?
+                this.Root = newNode;
+            else
+            {
+                if (string.Compare(value.getName(), before.Data.getName()) == -1)
+                    before.LeftNode = newNode;
+                else
+                    before.RightNode = newNode;
+            }
+            return true;
+        }
+        public void TraverseInOrder1(Node parent,BinarySearchTree tree1)
+        {
+            if (parent != null)
+            {
+                TraverseInOrder1(parent.LeftNode,tree1);
+                tree1.SapXep1(parent.Data);
+                TraverseInOrder1(parent.RightNode,tree1);
+            }
+        }
 
 
         // Thêm phần tử
@@ -74,15 +111,8 @@ namespace CTDL_exam
                 TraverseInOrder(parent.RightNode);
             }
         }
-        public void SapxepTruoc(Node parent)
-        {
-            if (parent != null)
-            {
-                Console.Write(parent.Data + " ");
-                SapxepTruoc(parent.RightNode);
-                SapxepTruoc(parent.RightNode);
-            }
-        }
+        
+        
         public void Sapxepsau(Node parent)
         {
             if (parent != null)
