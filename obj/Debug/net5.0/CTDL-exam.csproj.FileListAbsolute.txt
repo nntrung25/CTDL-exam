@@ -64,7 +64,6 @@ C:\Users\nntru\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.dll
 C:\Users\nntru\Desktop\CTDL-exam\obj\Debug\net5.0\ref\CTDL-exam.dll
 C:\Users\nntru\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.pdb
 C:\Users\nntru\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.genruntimeconfig.cache
-<<<<<<< HEAD
 >>>>>>> 82f6a849ae1a37ddaa4281da75c60b68b3b727de
 C:\Users\HP\dóaDSA\CTDL-exam\bin\Debug\net5.0\CTDL-exam.exe
 C:\Users\HP\dóaDSA\CTDL-exam\bin\Debug\net5.0\CTDL-exam.deps.json
@@ -82,7 +81,6 @@ C:\Users\HP\dóaDSA\CTDL-exam\obj\Debug\net5.0\CTDL-exam.dll
 C:\Users\HP\dóaDSA\CTDL-exam\obj\Debug\net5.0\ref\CTDL-exam.dll
 C:\Users\HP\dóaDSA\CTDL-exam\obj\Debug\net5.0\CTDL-exam.pdb
 C:\Users\HP\dóaDSA\CTDL-exam\obj\Debug\net5.0\CTDL-exam.genruntimeconfig.cache
-=======
 C:\Users\DELL\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.exe
 C:\Users\DELL\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.deps.json
 C:\Users\DELL\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.runtimeconfig.json
@@ -100,3 +98,19 @@ C:\Users\DELL\Desktop\CTDL-exam\obj\Debug\net5.0\ref\CTDL-exam.dll
 C:\Users\DELL\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.pdb
 C:\Users\DELL\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.genruntimeconfig.cache
 >>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.exe
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.deps.json
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.runtimeconfig.json
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.runtimeconfig.dev.json
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.dll
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\ref\CTDL-exam.dll
+C:\Users\User\Desktop\CTDL-exam\bin\Debug\net5.0\CTDL-exam.pdb
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.AssemblyInfo.cs
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.dll
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\ref\CTDL-exam.dll
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.pdb
+C:\Users\User\Desktop\CTDL-exam\obj\Debug\net5.0\CTDL-exam.genruntimeconfig.cache

@@ -9,7 +9,31 @@ namespace CTDL_exam
         public static BinarySearchTree monhoctree = new BinarySearchTree();
         public static int len = 40;
         // Code hàm chức năng ở dưới Hàm main
-
+        static void SapxepTheoGio(BinarySearchTree tree,string start,string end )
+        {
+            FileData.ReadFile(tree);
+            if(start==tree.Root.Data.getStart())
+            {
+                if(end==tree.Root.Data.getEnd())
+                tree.SapxepTruoc(tree.Root);
+                else
+                tree.TraverseInOrder(tree.Root);
+            } else
+            {
+                tree.Sapxepsau(tree.Root);
+            }
+            
+        }
+        static void SapxeptheoTC(BinarySearchTree tree,int tc)
+        {
+            FileData.ReadFile(tree);
+            if(tc<=tree.Root.Data.getTC())
+            {
+                tree.TraverseInOrder(tree.Root);
+            } else{
+                tree.Sapxepsau(tree.Root);
+            }
+        }
         static void SapxepAphabet(BinarySearchTree tree, string value)
         {
 
@@ -122,6 +146,22 @@ namespace CTDL_exam
             System.Console.WriteLine("Mời Bạn Nhập Kí Tự");
             string apha = Console.ReadLine();
             SapxepAphabet(monhoctree, apha);
+
+            //Sắp xếp theo số TC
+            System.Console.WriteLine("Sắp xếp theo số TC tăng hoạc giảm");
+            System.Console.WriteLine("======================================");
+            System.Console.WriteLine("Mời bạn nhập số TC muốn sắp xếp");
+            int tc=int.Parse(Console.ReadLine());
+            SapxeptheoTC(monhoctree,tc);
+            //Săp xếp theo ngày
+
+            System.Console.WriteLine("Sắp xếp theo gio bắt đầu và kết thúc");
+            System.Console.WriteLine("======================================");
+            System.Console.WriteLine("Mời bạn nhập giờ bắt đầu theo cú pháp nhập VD:7h");
+            string start=Console.ReadLine();
+            System.Console.WriteLine("Mời bạn nhập giờ kết thúc theo cú pháp nhập VD:13h");
+            string end=Console.ReadLine();
+            SapxepTheoGio(monhoctree,start,end);
 
             //Tìm kiếm theo mã môn học
             System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");

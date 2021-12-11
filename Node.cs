@@ -88,10 +88,12 @@ namespace CTDL_exam
             if (parent != null)
             {
                 Sapxepsau(parent.LeftNode);
-                Sapxepsau(parent.RightNode);
                 Console.Write(parent.Data + " ");
+                Sapxepsau(parent.RightNode);
             }
         }
+        
+
 
         // Nháp, để đó đi, mốt biết đâu cần xài
         /* //

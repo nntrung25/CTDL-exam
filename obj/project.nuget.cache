@@ -1,26 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "dgSpecHash": "DA69zMUZKjSn3zPgbrrBZe3/WtisAhvlTmmJrdk5Hfbsye8yeiwuoN7n1Gix//j7psFDTr+7NEktXqX+md2biw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "3ST6+uuHZf5LXoqhx4Nctx0yozs9wjE802dbcqZG8KOfGEEiBc90jTxqkSe7+xhGahX8L04XCdxjCMyIQ3hdXw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
-=======
-  "dgSpecHash": "P0iIAuJUq3xuopNL4BeoDeKEBb6wYZZs/18YcdhcUYJGLFwSUFHqrx2FKn7Y+xfgzPWpO/lt4aEI0gkLLEnTKw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
->>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
->>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
-=======
   "dgSpecHash": "gn0JGXvKHY9eBNNBn6TWAAsbFKLeqhTwKgA2/tBPEDg/srlSbDZMV/H8rYvDflNhN/RAKbMpDH22/DhA22qlqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
->>>>>>> 87b3e9b5ada5754fe889407d7151783e9824d38c
   "expectedPackageFiles": [],
   "logs": [
     {
