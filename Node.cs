@@ -184,7 +184,7 @@ namespace CTDL_exam
         {
             if (parent != null)
             {
-                if (string.Compare(value, parent.Data.getTeacher()) == 0) return parent;
+                if (string.Compare(value, parent.Data.getTeacher()) == 0 || parent.Data.getTeacher().ToLower().Contains(value.ToLower())) return parent;
                 if (string.Compare(value, parent.Data.getTeacher()) == -1)
                     return FindTheoGiangVien(value, parent.LeftNode);
                 else
