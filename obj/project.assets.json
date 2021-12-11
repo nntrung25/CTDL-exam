@@ -8,19 +8,47 @@
     "net5.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\nntru\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+>>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
+>>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
+      "projectName": "CTDL-exam",
+      "projectPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+>>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
       "projectName": "CTDL-exam",
       "projectPath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
       "packagesPath": "C:\\Users\\nntru\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\nntru\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +86,15 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+>>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
+>>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
       }
     }
   }
