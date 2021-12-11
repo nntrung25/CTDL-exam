@@ -93,13 +93,15 @@ namespace CTDL_exam
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
             
+            Console.WriteLine("____________________");
             //Săp xêp theo mã môn học
             System.Console.WriteLine("Sắp xếp theo mã môn học ");
             BinarySearchTree tree1=new BinarySearchTree();
             FileData.ReadFile(tree1);
+            tree1.TraverseInOrder1(monhoctree.Root,tree1);
             tree1.TraverseInOrder(tree1.Root);
-            tree1.TraverseInOrder1(tree1.Root,tree1);
             
+            Console.WriteLine("____________________\n");
             
             //Tìm kiếm theo mã môn học
             System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");
@@ -110,7 +112,7 @@ namespace CTDL_exam
             System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
             string value2 = Console.ReadLine();
             System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data); 
-            //
+            
             
 
 
