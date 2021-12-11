@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "P0iIAuJUq3xuopNL4BeoDeKEBb6wYZZs/18YcdhcUYJGLFwSUFHqrx2FKn7Y+xfgzPWpO/lt4aEI0gkLLEnTKw==",
+  "dgSpecHash": "gn0JGXvKHY9eBNNBn6TWAAsbFKLeqhTwKgA2/tBPEDg/srlSbDZMV/H8rYvDflNhN/RAKbMpDH22/DhA22qlqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\User\\Desktop\\CTDL-exam\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
