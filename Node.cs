@@ -31,6 +31,100 @@ namespace CTDL_exam
             Count(parent);
             return i;
         }
+        //Sắp xếp theo ngày 
+         public bool SapXep3(monhoc value)
+        {
+            Node before = null, after = this.Root;
+            while (after != null)
+            {
+                if (string.Compare(value.getStart(),after.Data.getStart())==0)
+                    return false;
+
+                before = after;
+                if (string.Compare(value.getStart(),after.Data.getStart())==-1)
+                    after = after.LeftNode; //left? 
+                else
+                    after = after.RightNode; //right?
+            }
+
+            Node newNode = new Node();
+            newNode.Data = value;
+            if (this.Root == null) //empty?
+                this.Root = newNode;
+            else
+            {
+                if (string.Compare(value.getStart(),after.Data.getStart())==-1)
+                    before.LeftNode = newNode;
+                else
+                    before.RightNode = newNode;
+            }
+            return true;
+        }
+        public void TraversePostOrder1(Node parent,BinarySearchTree tree3)
+        {
+            if (parent != null)
+            {
+                TraversePostOrder1(parent.LeftNode,tree3);
+                TraversePostOrder1(parent.RightNode,tree3);
+                tree3.SapXep3(parent.Data);
+            }
+        }
+        public void TraversePostOrder(Node parent)
+        {
+            if (parent != null)
+            {
+                TraversePostOrder(parent.LeftNode);
+                TraversePostOrder(parent.RightNode);
+                System.Console.WriteLine(parent.Data+" ");
+            }
+        }
+        //Sắp xếp theo mã môn học 2
+         public bool SapXep2(monhoc value)
+        {
+            Node before = null, after = this.Root;
+            while (after != null)
+            {
+                if ((int)value.getTC() == after.Data.getTC())
+                    return false;
+
+                before = after;
+                if ((int)value.getTC() < after.Data.getTC())
+                    after = after.LeftNode; //left? 
+                else
+                    after = after.RightNode; //right?
+            }
+
+            Node newNode = new Node();
+            newNode.Data = value;
+            if (this.Root == null) //empty?
+                this.Root = newNode;
+            else
+            {
+                if ((int)value.getTC() < before.Data.getTC())
+                    before.LeftNode = newNode;
+                else
+                    before.RightNode = newNode;
+            }
+            return true;
+        }
+        public void TraversePreOrder1(Node parent,BinarySearchTree tree2)
+        {
+            if (parent != null)
+            {
+                tree2.SapXep2(parent.Data);
+                TraversePreOrder1(parent.LeftNode,tree2);
+                TraversePreOrder1(parent.RightNode,tree2);
+            }
+        }
+        public void TraversePreOrder(Node parent)
+        {
+            if (parent != null)
+            {
+                System.Console.WriteLine(parent.Data+" ");
+                TraversePreOrder(parent.LeftNode);
+                TraversePreOrder(parent.RightNode);
+            }
+        }
         
         //Sắp xếp theo mã môn học
          public bool SapXep1(monhoc value)
