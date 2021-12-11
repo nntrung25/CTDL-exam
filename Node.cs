@@ -159,37 +159,56 @@ namespace CTDL_exam
 
         // Tìm kiếm theo mã môn học
         public Node FindTheoMaMon(string value)
-        {  return this.FindTheoMaMon(value, this.Root); }
+        {  return this.FindTheoMaMon(value.ToLower(), this.Root); }
         
         private Node FindTheoMaMon(string value, Node parent)
         {
             if (parent != null)
             {
-                if (string.Compare(value, parent.Data.getID()) == 0) return parent;
-                if (string.Compare(value, parent.Data.getID()) == -1)
+                if (string.Compare(value.ToLower(), parent.Data.getID().ToLower()) == 0) return parent;
+                if (string.Compare(value.ToLower(), parent.Data.getID().ToLower()) == -1)
                     return FindTheoMaMon(value, parent.LeftNode);
                 else
-                    return FindTheoMaMon(value, parent.RightNode);
+                    return FindTheoMaMon(value.ToLower(), parent.RightNode);
+            }
+            return null;
+        }
+
+        // Tìm kiếm theo tên môn học
+        public Node FindTheoTenMon(string value)
+        {  return this.FindTheoTenMon(value.ToLower(), this.Root); }
+        
+        private Node FindTheoTenMon(string value, Node parent)
+        {
+            if (parent != null)
+            {
+                if (string.Compare(value.ToLower(), parent.Data.getName().ToLower()) == 0) return parent;
+                if (string.Compare(value.ToLower(), parent.Data.getName().ToLower()) == -1)
+                    return FindTheoTenMon(value, parent.LeftNode);
+                else
+                    return FindTheoTenMon(value.ToLower(), parent.RightNode);
             }
             return null;
         }
         
+        
         //Tìm kiếm theo tên giảng viên
         public Node FindTheoGiangVien(string value)
-        {  return this.FindTheoGiangVien(value, this.Root); }
+        {  return this.FindTheoGiangVien(value.ToLower(), this.Root); }
         
         private Node FindTheoGiangVien(string value, Node parent)
         {
             if (parent != null)
             {
-                if (string.Compare(value, parent.Data.getTeacher()) == 0) return parent;
-                if (string.Compare(value, parent.Data.getTeacher()) == -1)
-                    return FindTheoGiangVien(value, parent.LeftNode);
+                if (string.Compare(value.ToLower(), parent.Data.getTeacher().ToLower()) == 0) return parent;
+                if (string.Compare(value.ToLower(), parent.Data.getTeacher().ToLower()) == -1)
+                    return FindTheoGiangVien(value.ToLower(), parent.LeftNode);
                 else
-                    return FindTheoGiangVien(value, parent.RightNode);
+                    return FindTheoGiangVien(value.ToLower(), parent.RightNode);
             }
             return null;
         }
+
 
 
 
