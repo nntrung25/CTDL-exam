@@ -98,10 +98,15 @@ namespace CTDL_exam
             string value1 = Console.ReadLine();
             System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data);
 
+            //Tìm kiếm theo tên môn học
+            System.Console.WriteLine("Nhập vào tên môn học cần tìm kiếm: ");
+            string value2 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoTenMon(value2).Data);
+
             //Tìm kiếm theo tên giảng viên
             System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
-            string value2 = Console.ReadLine();
-            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data);
+            string value3 = Console.ReadLine();
+            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value3).Data);
 
 
             //
