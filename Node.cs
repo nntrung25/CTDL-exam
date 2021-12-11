@@ -12,27 +12,27 @@ namespace CTDL_exam
     public class BinarySearchTree
     {
         public Node Root { get; set; }
-        
+
         // Đếm số phần tử trong cây Count
         public static int i;
-        private void Count(Node parent)
+        private void Count(Node parent)
         {
-            if (parent != null)
-            {
-                Count(parent.LeftNode);
+            if (parent != null)
+            {
+                Count(parent.LeftNode);
                 i++;
-                Count(parent.RightNode);
-            }
+                Count(parent.RightNode);
+            }
         }
 
-        public int CountNode(Node parent)
+        public int CountNode(Node parent)
         {
             i = 0;
             Count(parent);
             return i;
         }
 
-        
+
         // Thêm phần tử
         public bool Insert(monhoc value)
         {
@@ -41,11 +41,11 @@ namespace CTDL_exam
             {
                 if (string.Compare(value.getID(), after.Data.getID()) == 0)
                     return false;
-                
+
                 before = after;
-                if ( string.Compare(value.getID(), after.Data.getID()) == -1)
-                        after = after.LeftNode; //left? 
-                else  
+                if (string.Compare(value.getID(), after.Data.getID()) == -1)
+                    after = after.LeftNode; //left? 
+                else
                     after = after.RightNode; //right?
             }
 
@@ -62,105 +62,105 @@ namespace CTDL_exam
             }
             return true;
         }
-        
+
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
-        public void TraverseInOrder(Node parent)
+        public void TraverseInOrder(Node parent)
         {
-            if (parent != null)
-            {
-                TraverseInOrder(parent.LeftNode);
-                Console.Write(parent.Data + " ");
-                TraverseInOrder(parent.RightNode);
-            }
+            if (parent != null)
+            {
+                TraverseInOrder(parent.LeftNode);
+                Console.Write(parent.Data + " ");
+                TraverseInOrder(parent.RightNode);
+            }
         }
-        public void SapxepTruoc(Node parent)
+        public void SapxepTruoc(Node parent)
         {
-            if (parent != null)
-            {
-                Console.Write(parent.Data + " ");
+            if (parent != null)
+            {
+                Console.Write(parent.Data + " ");
                 SapxepTruoc(parent.RightNode);
-                SapxepTruoc(parent.RightNode);
-            }
+                SapxepTruoc(parent.RightNode);
+            }
         }
-        public void Sapxepsau(Node parent)
+        public void Sapxepsau(Node parent)
         {
-            if (parent != null)
-            {
-                Sapxepsau(parent.LeftNode);
-                Sapxepsau(parent.RightNode);
-                Console.Write(parent.Data + " ");
-            }
+            if (parent != null)
+            {
+                Sapxepsau(parent.LeftNode);
+                Sapxepsau(parent.RightNode);
+                Console.Write(parent.Data + " ");
+            }
         }
 
         // Nháp, để đó đi, mốt biết đâu cần xài
-/* //
-        // Tìm nút có điểm min
-        private float MinValueOfNode(Node node)
-        {
-            float minv = node.Data.getGPA();
-            while (node.LeftNode != null)
-            {
-                minv = node.LeftNode.Data.getGPA();
-                node = node.LeftNode;
-            }
-            return minv;
-        }
-        public float FindMin()
-        {
-            return MinValueOfNode(this.Root);
-        }
+        /* //
+                // Tìm nút có điểm min
+                private float MinValueOfNode(Node node)
+                {
+                    float minv = node.Data.getGPA();
+                    while (node.LeftNode != null)
+                    {
+                        minv = node.LeftNode.Data.getGPA();
+                        node = node.LeftNode;
+                    }
+                    return minv;
+                }
+                public float FindMin()
+                {
+                    return MinValueOfNode(this.Root);
+                }
 
-        // Tìm nút min kết hợp 2 hàm trên
-        public float FindMin2()
-        {
-            Node current = Root;
-            while (current.LeftNode != null)
-                current = current.LeftNode;
-            return current.Data.getGPA();
-        }
+                // Tìm nút min kết hợp 2 hàm trên
+                public float FindMin2()
+                {
+                    Node current = Root;
+                    while (current.LeftNode != null)
+                        current = current.LeftNode;
+                    return current.Data.getGPA();
+                }
 
-        // Tìm nút có điểm max
-        private float MaxValueOfNode(Node node)
-        {
-            float maxv = node.Data.getGPA();
-            while (node.RightNode != null)
-            {
-                maxv = node.RightNode.Data.getGPA();
-                node = node.RightNode;
-            }
-            return maxv;
-        }
-        public float FindMax()
-        {
-            return MaxValueOfNode(this.Root);
-        }
+                // Tìm nút có điểm max
+                private float MaxValueOfNode(Node node)
+                {
+                    float maxv = node.Data.getGPA();
+                    while (node.RightNode != null)
+                    {
+                        maxv = node.RightNode.Data.getGPA();
+                        node = node.RightNode;
+                    }
+                    return maxv;
+                }
+                public float FindMax()
+                {
+                    return MaxValueOfNode(this.Root);
+                }
 
-        // Tìm nút max kết hợp 2 hàm trên
-        public float FindMax2()
-        {
-            Node current = Root;
-            while (current.RightNode != null)
-                current = current.RightNode;
-            return current.Data.getGPA();
-        }
+                // Tìm nút max kết hợp 2 hàm trên
+                public float FindMax2()
+                {
+                    Node current = Root;
+                    while (current.RightNode != null)
+                        current = current.RightNode;
+                    return current.Data.getGPA();
+                }
 
-        // Độ sâu của cây (chiều dài cây)
-        public int GetTreeDepth()
-        {
-            return this.GetTreeDepth(this.Root);
-        }
+                // Độ sâu của cây (chiều dài cây)
+                public int GetTreeDepth()
+                {
+                    return this.GetTreeDepth(this.Root);
+                }
 
-        private int GetTreeDepth(Node parent)
-        {
-            return parent == null ? 0 : Math.Max(GetTreeDepth(parent.LeftNode), GetTreeDepth(parent.RightNode)) + 1;
-        }
-// */
+                private int GetTreeDepth(Node parent)
+                {
+                    return parent == null ? 0 : Math.Max(GetTreeDepth(parent.LeftNode), GetTreeDepth(parent.RightNode)) + 1;
+                }
+        // */
 
         // Tìm kiếm theo mã môn học
         public Node FindTheoMaMon(string value)
-        {  return this.FindTheoMaMon(value.ToLower(), this.Root); }
-        
+        { return this.FindTheoMaMon(value, this.Root); }
+
         private Node FindTheoMaMon(string value, Node parent)
         {
             if (parent != null)
@@ -169,46 +169,27 @@ namespace CTDL_exam
                 if (string.Compare(value.ToLower(), parent.Data.getID().ToLower()) == -1)
                     return FindTheoMaMon(value, parent.LeftNode);
                 else
-                    return FindTheoMaMon(value.ToLower(), parent.RightNode);
+                    return FindTheoMaMon(value, parent.RightNode);
             }
             return null;
         }
 
-        // Tìm kiếm theo tên môn học
-        public Node FindTheoTenMon(string value)
-        {  return this.FindTheoTenMon(value.ToLower(), this.Root); }
-        
-        private Node FindTheoTenMon(string value, Node parent)
-        {
-            if (parent != null)
-            {
-                if (string.Compare(value.ToLower(), parent.Data.getName().ToLower()) == 0) return parent;
-                if (string.Compare(value.ToLower(), parent.Data.getName().ToLower()) == -1)
-                    return FindTheoTenMon(value, parent.LeftNode);
-                else
-                    return FindTheoTenMon(value.ToLower(), parent.RightNode);
-            }
-            return null;
-        }
-        
-        
         //Tìm kiếm theo tên giảng viên
         public Node FindTheoGiangVien(string value)
-        {  return this.FindTheoGiangVien(value.ToLower(), this.Root); }
-        
+        { return this.FindTheoGiangVien(value, this.Root); }
+
         private Node FindTheoGiangVien(string value, Node parent)
         {
             if (parent != null)
             {
-                if (string.Compare(value.ToLower(), parent.Data.getTeacher().ToLower()) == 0) return parent;
-                if (string.Compare(value.ToLower(), parent.Data.getTeacher().ToLower()) == -1)
-                    return FindTheoGiangVien(value.ToLower(), parent.LeftNode);
+                if (string.Compare(value, parent.Data.getTeacher()) == 0) return parent;
+                if (string.Compare(value, parent.Data.getTeacher()) == -1)
+                    return FindTheoGiangVien(value, parent.LeftNode);
                 else
-                    return FindTheoGiangVien(value.ToLower(), parent.RightNode);
+                    return FindTheoGiangVien(value, parent.RightNode);
             }
             return null;
         }
-
 
 
 
@@ -228,21 +209,21 @@ namespace CTDL_exam
         // Xóa nút
         public void Remove(string value)
         { this.Root = Remove(this.Root, value); }
-        
+
         private Node Remove(Node parent, string key)
-        {   
+        {
             if (parent == null) return parent;
-            if (string.Compare(key, parent.Data.getID()) == -1) parent.LeftNode = Remove(parent.LeftNode, key);
-            else if (string.Compare(key, parent.Data.getID()) == 1) parent.RightNode = Remove(parent.RightNode, key);
+            if (string.Compare(key.ToLower(), parent.Data.getID().ToLower()) == -1) parent.LeftNode = Remove(parent.LeftNode, key);
+            else if (string.Compare(key.ToLower(), parent.Data.getID().ToLower()) == 1) parent.RightNode = Remove(parent.RightNode, key);
             else//Xóa nút hiện tại
-            {   
+            {
                 // Nếu nút hiện tại có 1 nút con
                 if (parent.LeftNode == null) return parent.RightNode;
                 else if (parent.RightNode == null) return parent.LeftNode;
                 // Nếu nút có hai nút con: lấy nút nhỏ hơn (bên trái)
                 parent.Data = MinOfNode(parent.RightNode);
                 parent.RightNode = Remove(parent.RightNode, parent.Data.getID());
-            } 
+            }
             return parent;
         }
 
