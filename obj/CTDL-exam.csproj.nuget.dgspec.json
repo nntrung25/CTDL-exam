@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\test\\CTDL-exam\\CTDL-exam.csproj": {}
+    "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\test\\CTDL-exam\\CTDL-exam.csproj": {
+    "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\test\\CTDL-exam\\CTDL-exam.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
         "projectName": "CTDL-exam",
-        "projectPath": "C:\\Users\\HP\\test\\CTDL-exam\\CTDL-exam.csproj",
+        "projectPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\test\\CTDL-exam\\obj\\",
+        "outputPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

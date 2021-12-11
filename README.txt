@@ -1,3 +1,9 @@
+Quy định code: 
+0. Trước khi code nhớ pull để tránh bị xung đột code
+1. Ghi comment cho từng nhóm câu lệnh. Để người khác đọc có thể hiểu
+2. "Nếu được" thì tạo một class riêng cho nhóm chức năng (Ví dụ: Class FileData cho việc ghi file)
+3.
+
 Link project Github
 https://github.com/nntrung47/CTDL-exam.git
 branch: master
@@ -14,8 +20,3 @@ https://docs.google.com/document/d/174S23W12o_7XdVSHxb0ob4_rOSBjbhGz9JYncN1SOak/
 Các file trong folder Drive
 Hướng dẫn Github
 Thảo luận CTDL
-
-Quy định code: 
-1. Phải ghi comment cho từng nhóm câu lệnh. Để người khác đọc có thể hiểu
-2. Trước khi push nhớ pull để tránh xung đột code
-3.
