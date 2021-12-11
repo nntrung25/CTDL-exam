@@ -34,7 +34,7 @@ namespace CTDL_exam
         
         
         //Sắp xếp theo ngày 
-         public bool SapXep3(monhoc value)
+        private bool SapXepDays (monhoc value)
         {
             Node before = null, after = this.Root;
             while (after != null)
@@ -62,19 +62,19 @@ namespace CTDL_exam
             }
             return true;
         }
-        public void TraversePostOrder1(Node parent,BinarySearchTree tree3)
+        public void SapXepDays (Node parent, BinarySearchTree tree1)
         {
             if (parent != null)
             {
-                TraversePostOrder1(parent.LeftNode,tree3);
-                TraversePostOrder1(parent.RightNode,tree3);
-                tree3.SapXep3(parent.Data);
+                SapXepDays(parent.LeftNode,tree1);
+                tree1.SapXepDays(parent.Data);
+                SapXepDays(parent.RightNode,tree1);
             }
         }
 
 
         //Sắp xếp theo mã TC 
-         public bool SapXep2(monhoc value)
+        private bool SapXepTC(monhoc value)
         {
             Node before = null, after = this.Root;
             while (after != null)
@@ -102,19 +102,19 @@ namespace CTDL_exam
             }
             return true;
         }
-        public void TraversePreOrder1(Node parent,BinarySearchTree tree2)
+        public void SapXepTC(Node parent,BinarySearchTree tree1)
         {
             if (parent != null)
             {
-                tree2.SapXep2(parent.Data);
-                TraversePreOrder1(parent.LeftNode,tree2);
-                TraversePreOrder1(parent.RightNode,tree2);
+                SapXepTC(parent.LeftNode,tree1);
+                tree1.SapXepTC(parent.Data);
+                SapXepTC(parent.RightNode,tree1);
             }
         }
 
         
         //Sắp xếp theo mã môn học
-         public bool SapXep1(monhoc value)
+        private bool SapXepID(monhoc value)
         {
             Node before = null, after = this.Root;
             while (after != null)
@@ -142,13 +142,13 @@ namespace CTDL_exam
             }
             return true;
         }
-        public void TraverseInOrder1(Node parent,BinarySearchTree tree1)
+        public void SapXepID(Node parent,BinarySearchTree tree1)
         {
             if (parent != null)
             {
-                TraverseInOrder1(parent.LeftNode,tree1);
-                tree1.SapXep1(parent.Data);
-                TraverseInOrder1(parent.RightNode,tree1);
+                SapXepID(parent.LeftNode,tree1);
+                tree1.SapXepID(parent.Data);
+                SapXepID(parent.RightNode,tree1);
             }
         }
 
@@ -185,17 +185,26 @@ namespace CTDL_exam
 
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
-        public void TraverseInOrder(Node parent)
+        public void PrintDetailInOrder(Node parent)
         {
             if (parent != null)
             {
-                TraverseInOrder(parent.LeftNode);
+                PrintDetailInOrder(parent.LeftNode);
                 Console.Write(parent.Data + " ");
-                TraverseInOrder(parent.RightNode);
+                PrintDetailInOrder(parent.RightNode);
             }
         }
 
-        
+        public void PrintNameInOrder (Node parent)
+        {
+            if (parent != null)
+            {
+                PrintNameInOrder(parent.LeftNode);
+                Console.WriteLine(parent.Data.getName());
+                PrintNameInOrder(parent.RightNode);
+            }
+        }
+
         // Tìm kiếm theo mã môn học
         public Node FindTheoMaMon(string value)
         { return this.FindTheoMaMon(value, this.Root); }

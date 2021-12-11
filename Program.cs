@@ -49,23 +49,27 @@ namespace CTDL_exam
             Console.WriteLine("4. Xóa");
             Console.WriteLine("5. Tìm kiếm theo mã môn");
             Console.WriteLine("6. Tìm kiếm theo giảng viên");
-            Console.WriteLine("7. Sắp xếp");
-            Console.WriteLine("8. Điểm\n");
+            Console.WriteLine("7. Sắp xếp theo ngày");
+            Console.WriteLine("8. Sắp xếp theo TC");
+            Console.WriteLine("9. Sắp xếp theo mã môn");
+            Console.WriteLine("10. Điểm\n");
+            Console.WriteLine("0. Thoát chương trình");
 
         }
         static void Main(string[] args)
         {
 
-            //Console.Clear();
             Console.InputEncoding = System.Text.Encoding.UTF8;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine("CTDL exam");
+            BinarySearchTree tree1;
+nhan:
+            Console.Clear();
 
             // Đọc file text lấy dữ liệu
             FileData.ReadFile(monhoctree);
             Console.WriteLine("Dữ liệu có sẵn");
-            monhoctree.TraverseInOrder(monhoctree.Root);
+            monhoctree.PrintNameInOrder(monhoctree.Root);
 
             InMenu();
             Console.Write("Chọn chức năng: ");
@@ -78,12 +82,14 @@ namespace CTDL_exam
             4. Xóa
             5. Tìm kiếm mã môn
             6. Tìm kiếm giảng viên
-            7. Sắp xếp
-            8. Điểm
+            7. Sắp xếp theo ngày
+            8. Sắp xếp theo TC
+            9. Sắp xếp theo mã môn
+            10. Điểm
  */
             switch (n)
             {
-                case 1: 
+                case 1: monhoctree.PrintDetailInOrder(monhoctree.Root); break;
                 case 2: Themphantu(monhoctree); break;
                 case 3:Console.Write("Nhập mã môn học cần chỉnh sửa: ");
                 string maMonHoc = Console.ReadLine();
@@ -97,35 +103,20 @@ namespace CTDL_exam
                 case 6:System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
             string value2 = Console.ReadLine();
             System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data); break;
-                case 7:
+                case 7: tree1 = new BinarySearchTree();
+            tree1.SapXepDays(monhoctree.Root,tree1); break;
+                case 8: tree1 = new BinarySearchTree();
+            tree1.SapXepTC(monhoctree.Root,tree1); break;
+                case 9: tree1 = new BinarySearchTree();
+            tree1.SapXepID(monhoctree.Root,tree1); break;
+                case 10: Console.WriteLine("Điểm"); break;
                 default: break;
             }
+            if (n != 0)
+                goto nhan;
+
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
-            
-            System.Console.WriteLine("____________________");
-            //Sắp xếp theo Ngày
-            System.Console.WriteLine("Sắp xếp theo ngày ");
-            BinarySearchTree tree3=new BinarySearchTree();
-            FileData.ReadFile(tree3);
-            tree3.TraversePostOrder1(tree3.Root,tree3);
-            tree3.TraverseInOrder(tree3.Root);
-            
-            System.Console.WriteLine("____________________");
-            //Sắp xếp theo TC
-            System.Console.WriteLine("Sắp xếp theo TC ");
-            BinarySearchTree tree2=new BinarySearchTree();
-            FileData.ReadFile(tree2);
-            tree2.TraversePreOrder1(tree2.Root,tree2);
-            tree2.TraverseInOrder(tree2.Root);
-            
-            Console.WriteLine("____________________");
-            //Săp xêp theo mã môn học
-            System.Console.WriteLine("Sắp xếp theo mã môn học ");
-            BinarySearchTree tree1=new BinarySearchTree();
-            FileData.ReadFile(tree1);
-            tree1.TraverseInOrder1(monhoctree.Root,tree1);
-            tree1.TraverseInOrder(tree1.Root);
             
         }
     }
