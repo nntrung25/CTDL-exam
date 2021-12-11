@@ -9,6 +9,7 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\nntru\\.nuget\\packages\\": {}
 =======
 <<<<<<< HEAD
@@ -17,21 +18,29 @@
     "C:\\Users\\DELL\\.nuget\\packages\\": {}
 >>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
 >>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
+=======
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+>>>>>>> 87b3e9b5ada5754fe889407d7151783e9824d38c
   },
   "project": {
     "version": "1.0.0",
     "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\nntru\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
 =======
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
+=======
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+>>>>>>> 87b3e9b5ada5754fe889407d7151783e9824d38c
       "projectName": "CTDL-exam",
-      "projectPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\CTDL-exam.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\dóaDSA\\CTDL-exam\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\CTDL-exam\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
 =======
       "projectUniqueName": "C:\\Users\\DELL\\Desktop\\CTDL-exam\\CTDL-exam.csproj",
@@ -49,6 +58,9 @@
 >>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 >>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
+=======
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 87b3e9b5ada5754fe889407d7151783e9824d38c
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -87,6 +99,7 @@
           }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
 =======
 <<<<<<< HEAD
@@ -95,7 +108,18 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
 >>>>>>> c0890928b64955730f5ea1f5e828701da9687b83
 >>>>>>> 9ed84d45d2267f5d9e87bb5eb4dbf8a38350a03d
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> 87b3e9b5ada5754fe889407d7151783e9824d38c
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\User\\Desktop\\CTDL-exam\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
