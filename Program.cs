@@ -19,9 +19,7 @@ namespace CTDL_exam
             string[] Arr = new string[7];
             for (int i = 0; i < 7; i++)
             {
-                Console.SetCursorPosition(i * 15, 1);
                 Console.WriteLine(Title[i]);
-                Console.SetCursorPosition(i * 15, 2);
                 Arr[i] = Console.ReadLine();
             }
             Console.Write(Arr[1]); Console.ReadKey();
