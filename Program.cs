@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CTDL_exam
 {
@@ -10,8 +11,8 @@ namespace CTDL_exam
         
         static void Themphantu(BinarySearchTree tree)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
 
             Console.Clear();
             Console.WriteLine("Thêm phần tử");
@@ -22,32 +23,25 @@ namespace CTDL_exam
                 Console.WriteLine(Title[i]);
                 Arr[i] = Console.ReadLine();
             }
-            Console.Write(Arr[1]); Console.ReadKey();
             tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
 
         }
 
         static void Suaphantu(BinarySearchTree tree,string maMonHoc)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
 
             tree.Remove(maMonHoc);
             Console.WriteLine("Chỉnh sửa môn học có mã môn là: {0}",maMonHoc);
             string[] Title = { "Mã môn học","Tên môn", "Số tín chỉ", "Bắt đầu", "Kết thúc", "Tên giảng viên", "Điểm môn học" };
-            string[] Arr;
-            string a = "~~~~~~";
-            Arr = a.Split('~');
+            string[] Arr = new string[7];
             Arr[0] = maMonHoc;
-            Arr[1] = Console.ReadLine();
-            Console.Write(Arr[1]); Console.ReadKey();
-
             for (int i = 1; i < Arr.Length; i++)
             {
                 Console.WriteLine(Title[i]);
                 Arr[i] = Console.ReadLine();
             }
-            Console.Write(Arr[1]); Console.ReadKey();
             tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
         }
 
@@ -72,8 +66,8 @@ namespace CTDL_exam
         static void Main(string[] args)
         {
 
-            Console.InputEncoding = System.Text.Encoding.UTF8;
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
 
             BinarySearchTree tree1;
 
@@ -128,11 +122,20 @@ nhan:
             Console.ReadKey(); break;
 
                 case 7: tree1 = new BinarySearchTree();
-            tree1.SapXepDays(monhoctree.Root,tree1); break;
+            tree1.SapXepDays(monhoctree.Root,tree1);
+            tree1.PrintDetailInOrder(tree1.Root);
+            Console.ReadKey(); break;
+
                 case 8: tree1 = new BinarySearchTree();
-            tree1.SapXepTC(monhoctree.Root,tree1); break;
+            tree1.SapXepTC(monhoctree.Root,tree1);
+            tree1.PrintDetailInOrder(tree1.Root);
+            Console.ReadKey(); break;
+
                 case 9: tree1 = new BinarySearchTree();
-            tree1.SapXepID(monhoctree.Root,tree1); break;
+            tree1.SapXepID(monhoctree.Root,tree1);
+            tree1.PrintDetailInOrder(tree1.Root);
+            Console.ReadKey(); break;
+            
                 case 10: Console.WriteLine("Điểm"); break;
                 default: break;
             }

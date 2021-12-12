@@ -13,8 +13,8 @@ namespace CTDL_exam
         // Chương trình ghi file chính
         public static void WriteFile(BinarySearchTree tree)
         {
-            Console.InputEncoding = System.Text.Encoding.UTF8;
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
 
             p = tree.CountNode(tree.Root);
             string[,] monhoc = new string[tree.CountNode(tree.Root),7];

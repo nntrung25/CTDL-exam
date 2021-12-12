@@ -34,16 +34,16 @@ namespace CTDL_exam
         
         
         //Sắp xếp theo ngày 
-        private bool SapXepDays (monhoc value)
+        private bool InsertWithDays (monhoc value)
         {
             Node before = null, after = this.Root;
             while (after != null)
             {
-                if (string.Compare(value.getStart(),after.Data.getStart())==0)
+                if (CompareDay(value.getStart(),after.Data.getStart())==0)
                     return false;
 
                 before = after;
-                if (string.Compare(value.getStart(),after.Data.getStart())==-1)
+                if (CompareDay(value.getStart(),after.Data.getStart())==-1)
                     after = after.LeftNode; //left? 
                 else
                     after = after.RightNode; //right?
@@ -55,19 +55,34 @@ namespace CTDL_exam
                 this.Root = newNode;
             else
             {
-                if (string.Compare(value.getStart(),after.Data.getStart())==-1)
+                if (CompareDay(value.getStart(),before.Data.getStart())==-1)
                     before.LeftNode = newNode;
                 else
                     before.RightNode = newNode;
             }
             return true;
         }
+        private int CompareDay (string strA, string strB)
+        {
+            string[] A , B;
+            A = strA.Split('/');
+            B = strB.Split('/');
+            if (string.Compare(A[2], B[2]) != 0)
+                return string.Compare(A[2], B[2]);
+            
+            else
+            if (string.Compare(A[1], B[1]) != 0)
+                return string.Compare(A[1], B[1]);
+            
+            else
+                return string.Compare(A[0], B[0]);
+        }
         public void SapXepDays (Node parent, BinarySearchTree tree1)
         {
             if (parent != null)
             {
                 SapXepDays(parent.LeftNode,tree1);
-                tree1.SapXepDays(parent.Data);
+                tree1.InsertWithDays(parent.Data);
                 SapXepDays(parent.RightNode,tree1);
             }
         }
@@ -79,11 +94,8 @@ namespace CTDL_exam
             Node before = null, after = this.Root;
             while (after != null)
             {
-                if ((int)value.getTC() == after.Data.getTC())
-                    return false;
-
                 before = after;
-                if ((int)value.getTC() < after.Data.getTC())
+                if ((int)value.getTC() <= after.Data.getTC())
                     after = after.LeftNode; //left? 
                 else
                     after = after.RightNode; //right?
@@ -95,7 +107,7 @@ namespace CTDL_exam
                 this.Root = newNode;
             else
             {
-                if ((int)value.getTC() < before.Data.getTC())
+                if ((int)value.getTC() <= before.Data.getTC())
                     before.LeftNode = newNode;
                 else
                     before.RightNode = newNode;
@@ -233,6 +245,9 @@ namespace CTDL_exam
         //Tìm kiếm theo tên giảng viên
         public string FindTheoGiangVien(string value)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+
             str = "";
             FindTheoGiangVien(value, this.Root);
             if (str == "")
@@ -242,10 +257,13 @@ namespace CTDL_exam
 
         private Node FindTheoGiangVien(string value, Node parent)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+
             if (parent != null)
             {
                 FindTheoGiangVien(value, parent.LeftNode);
-                if (parent.Data.getTeacher().ToLower().Contains(value.ToLower()))
+                if (parent.Data.getTeacher().ToLower().Contains(value.ToLower()) == true)
                     str = str + parent.Data.getName() + "\n";
                 FindTheoGiangVien(value, parent.RightNode);
             }
@@ -276,7 +294,6 @@ namespace CTDL_exam
             {
                 Console.WriteLine("Xóa không thành công");
             }
-            else Console.WriteLine("Xóa xong");
         }
 
         private Node Remove(Node parent, string key)
