@@ -1,20 +1,21 @@
 using System;
 using System.IO;
 
-
 namespace CTDL_exam
 {
     class FileData
     {
+        // Khai báo
         static int p, q = 7;
-
-        // static string[,] monhoc;
         static string file = "text.txt";
 
         // Ghi file text
         // Chương trình ghi file chính
         public static void WriteFile(BinarySearchTree tree)
         {
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             p = tree.CountNode(tree.Root);
             string[,] monhoc = new string[tree.CountNode(tree.Root),7];
             TreeToArray(tree, monhoc, p);
@@ -33,7 +34,7 @@ namespace CTDL_exam
 
             }
 
-            string input = string.Join("`",inputarr);
+            string input = string.Join("\n",inputarr);
 
             StreamWriter sw;
             sw = File.CreateText(file);
@@ -76,7 +77,7 @@ namespace CTDL_exam
             string output = sr.ReadToEnd();
             sr.Close();
 
-            string[] outputarr = output.Split('`');
+            string[] outputarr = output.Split('\n');
             
             p = outputarr.Length;
             string[,] monhoc = new string[p, 7];
@@ -105,8 +106,6 @@ namespace CTDL_exam
                 tree.Insert(new monhoc (array[i,0], array[i,1], int.Parse(array[i,2]), array[i,3], array[i,4], array[i,5], float.Parse(array[i,6])));
             }
         }
-
-        
 
     }
 }

@@ -195,14 +195,22 @@ namespace CTDL_exam
             }
         }
 
-        public void PrintNameInOrder (Node parent)
+        string str;
+        public string PrintNameInOrder (Node parent)
+        {
+            str = "";
+            str = PrintName(parent);
+            return str;
+        }
+        private string PrintName (Node parent)
         {
             if (parent != null)
             {
-                PrintNameInOrder(parent.LeftNode);
-                Console.WriteLine(parent.Data.getName());
-                PrintNameInOrder(parent.RightNode);
+                PrintName(parent.LeftNode);
+                str = str + "\n" + parent.Data.getName();
+                PrintName(parent.RightNode);
             }
+            return str;
         }
 
         // Tìm kiếm theo mã môn học
@@ -223,19 +231,25 @@ namespace CTDL_exam
         }
 
         //Tìm kiếm theo tên giảng viên
-        public Node FindTheoGiangVien(string value)
-        { return this.FindTheoGiangVien(value, this.Root); }
+        public string FindTheoGiangVien(string value)
+        {
+            str = "";
+            FindTheoGiangVien(value, this.Root);
+            if (str == "")
+                str = "Không có giá trị phù hợp";
+            return str;
+        }
 
         private Node FindTheoGiangVien(string value, Node parent)
         {
             if (parent != null)
             {
-                if (string.Compare(value, parent.Data.getTeacher()) == 0 || parent.Data.getTeacher().ToLower().Contains(value.ToLower())) return parent;
-                if (string.Compare(value, parent.Data.getTeacher()) == -1)
-                    return FindTheoGiangVien(value, parent.LeftNode);
-                else
-                    return FindTheoGiangVien(value, parent.RightNode);
+                FindTheoGiangVien(value, parent.LeftNode);
+                if (parent.Data.getTeacher().ToLower().Contains(value.ToLower()))
+                    str = str + parent.Data.getName() + "\n";
+                FindTheoGiangVien(value, parent.RightNode);
             }
+
             return null;
         }
 
@@ -256,7 +270,14 @@ namespace CTDL_exam
 
         // Xóa nút
         public void Remove(string value)
-        { this.Root = Remove(this.Root, value); }
+        {
+            this.Root = Remove(this.Root, value);
+            if (Remove(this.Root, value) == null)
+            {
+                Console.WriteLine("Xóa không thành công");
+            }
+            else Console.WriteLine("Xóa xong");
+        }
 
         private Node Remove(Node parent, string key)
         {
@@ -274,8 +295,6 @@ namespace CTDL_exam
             }
             return parent;
         }
-
-
 
 
     }

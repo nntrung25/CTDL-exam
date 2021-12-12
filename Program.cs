@@ -5,11 +5,14 @@ namespace CTDL_exam
     class Program
     {
         public static BinarySearchTree monhoctree = new BinarySearchTree();
-        public static int len = 40;
+        public static int len = 50;
         // Code hàm chức năng ở dưới Hàm main
         
         static void Themphantu(BinarySearchTree tree)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
             Console.Clear();
             Console.WriteLine("Thêm phần tử");
             string[] Title = { "Mã môn", "Tên môn", "Số tín chỉ", "Bắt đầu", "Kết thúc", "Tên giảng viên", "Điểm môn học" };
@@ -21,39 +24,51 @@ namespace CTDL_exam
                 Console.SetCursorPosition(i * 15, 2);
                 Arr[i] = Console.ReadLine();
             }
+            Console.Write(Arr[1]); Console.ReadKey();
             tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
 
         }
 
         static void Suaphantu(BinarySearchTree tree,string maMonHoc)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
             tree.Remove(maMonHoc);
             Console.WriteLine("Chỉnh sửa môn học có mã môn là: {0}",maMonHoc);
             string[] Title = { "Mã môn học","Tên môn", "Số tín chỉ", "Bắt đầu", "Kết thúc", "Tên giảng viên", "Điểm môn học" };
-            string[] Arr = new string[7];
+            string[] Arr;
+            string a = "~~~~~~";
+            Arr = a.Split('~');
             Arr[0] = maMonHoc;
-            for (int i = 1; i < 7; i++)
+            Arr[1] = Console.ReadLine();
+            Console.Write(Arr[1]); Console.ReadKey();
+
+            for (int i = 1; i < Arr.Length; i++)
             {
                 Console.WriteLine(Title[i]);
                 Arr[i] = Console.ReadLine();
             }
+            Console.Write(Arr[1]); Console.ReadKey();
             tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
         }
 
         static void InMenu ()
         {
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1. Hiển thị chi tiết một môn học");
-            Console.WriteLine("2. Thêm");
-            Console.WriteLine("3. Sửa");
-            Console.WriteLine("4. Xóa");
-            Console.WriteLine("5. Tìm kiếm theo mã môn");
-            Console.WriteLine("6. Tìm kiếm theo giảng viên");
-            Console.WriteLine("7. Sắp xếp theo ngày");
-            Console.WriteLine("8. Sắp xếp theo TC");
-            Console.WriteLine("9. Sắp xếp theo mã môn");
-            Console.WriteLine("10. Điểm\n");
-            Console.WriteLine("0. Thoát chương trình");
+            UI.DashTop();
+            UI.TextCenter("Menu");
+            UI.TextNormal("1. Hiển thị chi tiết một môn học");
+            UI.TextNormal("2. Thêm");
+            UI.TextNormal("3. Sửa");
+            UI.TextNormal("4. Xóa");
+            UI.TextNormal("5. Tìm kiếm theo mã môn");
+            UI.TextNormal("6. Tìm kiếm theo giảng viên");
+            UI.TextNormal("7. Sắp xếp theo ngày");
+            UI.TextNormal("8. Sắp xếp theo TC");
+            UI.TextNormal("9. Sắp xếp theo mã môn");
+            UI.TextNormal("10. Điểm\n");
+            UI.TextNormal("0. Thoát chương trình");
+            UI.DashBot();
 
         }
         static void Main(string[] args)
@@ -63,13 +78,15 @@ namespace CTDL_exam
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             BinarySearchTree tree1;
-nhan:
-            Console.Clear();
 
             // Đọc file text lấy dữ liệu
             FileData.ReadFile(monhoctree);
-            Console.WriteLine("Dữ liệu có sẵn");
-            monhoctree.PrintNameInOrder(monhoctree.Root);
+nhan:       
+            Console.Clear();
+            UI.DashTop();
+            UI.TextCenter("Dữ liệu có sẵn");
+            UI.TextNormal(monhoctree.PrintNameInOrder(monhoctree.Root));
+            UI.DashBot();
 
             InMenu();
             Console.Write("Chọn chức năng: ");
@@ -89,20 +106,29 @@ nhan:
  */
             switch (n)
             {
-                case 1: monhoctree.PrintDetailInOrder(monhoctree.Root); break;
+                case 1: monhoctree.PrintDetailInOrder(monhoctree.Root); Console.ReadKey(); break;
                 case 2: Themphantu(monhoctree); break;
                 case 3:Console.Write("Nhập mã môn học cần chỉnh sửa: ");
                 string maMonHoc = Console.ReadLine();
                 Suaphantu(monhoctree, maMonHoc); break;
+
                 case 4: Console.Write("Nhập mã môn muốn xóa: ");
                 string del = Console.ReadLine();
-                monhoctree.Remove(del); break;
+                if (monhoctree.FindTheoMaMon(del) == null)
+                    Console.WriteLine("Xóa không thành công. Mã môn học không đúng");
+                monhoctree.Remove(del); 
+                Console.ReadKey(); break;
+
                 case 5: System.Console.WriteLine("Nhập vào mã môn học cần tìm kiếm: ");
             string value1 = Console.ReadLine();
-            System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data); break;
+            System.Console.WriteLine(monhoctree.FindTheoMaMon(value1).Data); 
+            Console.ReadKey(); break;
+
                 case 6:System.Console.WriteLine("Nhập vào tên giảng viên cần tìm kiếm: ");
             string value2 = Console.ReadLine();
-            System.Console.WriteLine(monhoctree.FindTheoGiangVien(value2).Data); break;
+            UI.TextNormal(monhoctree.FindTheoGiangVien(value2));
+            Console.ReadKey(); break;
+
                 case 7: tree1 = new BinarySearchTree();
             tree1.SapXepDays(monhoctree.Root,tree1); break;
                 case 8: tree1 = new BinarySearchTree();
