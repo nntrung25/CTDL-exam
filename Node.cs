@@ -32,7 +32,33 @@ namespace CTDL_exam
             return i;
         }
         
-        
+        // Tính điểm trung bình, min max
+        float avg, min, max;
+
+        public string Scoring (Node parent)
+        {
+            avg = 0f; min = 100f; max = 0f;
+            int count = CountNode(this.Root);
+            Score(parent);
+            str = "Điểm trung bình: " + avg/count + "\n";
+            str += "Điểm max: " + max + "\n";
+            str += "Điểm min: " + min + "\n";
+            return str;
+        }
+
+        private void Score (Node parent)
+        {
+            if (parent != null)
+            {
+                Score(parent.LeftNode);
+                float GPA = parent.Data.getGPA();
+                avg += GPA;
+                min = min > GPA ? GPA : min ;
+                max = max < GPA ? GPA : max ;
+                Score(parent.RightNode);
+            }
+        }
+
         //Sắp xếp theo ngày 
         private bool InsertWithDays (monhoc value)
         {
@@ -207,6 +233,24 @@ namespace CTDL_exam
             }
         }
 
+        public string Detail ()
+        {
+            UI.WriteLine("Nhập mã môn cần hiển thị: ");
+            Console.SetCursorPosition(31, 22 + CountNode(this.Root));
+
+            str = Console.ReadLine();
+            str = PrintDetail(FindTheoMaMon(str));
+            return str;
+        }
+        public string PrintDetail(Node parent)
+        {
+            if (parent != null)
+            {
+                str = parent.Data.ToString();
+            }
+            return str;
+        }
+
         string str;
         public string PrintNameInOrder (Node parent)
         {
@@ -284,7 +328,6 @@ namespace CTDL_exam
             }
             return min;
         }
-
 
         // Xóa nút
         public void Remove(string value)

@@ -75,10 +75,10 @@ namespace CTDL_exam
             Console.InputEncoding = System.Text.Encoding.UTF8;
             
             string a;
-            a = string.Format("\nMôn {0}, mã môn học {1}, số tín chỉ {2}", this.name, this.id, this.tc);
-            a = a + string.Format("\nGiờ bắt đầu {0}, giờ kết thúc {1}", this.start, this.end);
-            a = a + string.Format("\nGiảng viên {0}, điểm môn {1}\n", this.gv, this.gpa);
-            
+            a = string.Format("\nMôn {0}, mã môn {1}, {2} tín chỉ", this.name, this.id, this.tc);
+            a += string.Format("\nBắt đầu {0}, kết thúc {1}", this.start, this.end);
+            a += string.Format("\nGiảng viên {0}\n", this.gv);
+            a += string.Format("Điểm: {0}", this.gpa);
             return a;
         }
 

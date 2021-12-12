@@ -25,7 +25,7 @@ namespace CTDL_exam
         }
 
         // Căn trái
-        public static void TextNormal (string str)
+        public static void WriteLine (string str)
         {
             string[] strarr = str.Split('\n');
             for (int i = 0; i < strarr.Length; i++)
@@ -34,6 +34,16 @@ namespace CTDL_exam
             }
 
         }
+
+        public static void Write (string str)
+        {
+            str = "    " + str;
+            str = str.PadRight(len - 2);
+            str = "|" + str + "|";
+            Console.Write(str);
+        }
+
+        // UI.WriteLine
 
         private static void Text (string str)
         {
