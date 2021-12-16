@@ -13,6 +13,7 @@ namespace CTDL_exam
             str = str.PadRight(len - 2, '_');
             str = " " + str;
             Console.WriteLine(str);
+            WriteLine("");
         }
 
         // Gạch chân ở dưới
@@ -68,6 +69,13 @@ namespace CTDL_exam
 
             str = "|" + space + str + space + "|";
             Console.WriteLine(str);
+        }
+
+        public static void ReadLine (string content, ref string data)
+        {
+            content = "|" + "    " + content + ": ";
+            Console.Write(content);
+            data = Console.ReadLine();
         }
     }
 }

@@ -113,6 +113,17 @@ namespace CTDL_exam
             }
         }
 
+        public string PrintDays(Node parent)
+        {
+            if (parent != null)
+            {
+                PrintDays(parent.LeftNode);
+                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getStart();
+                PrintDays(parent.RightNode);
+            }
+            return str;
+        }
+
 
         //Sắp xếp theo mã TC 
         private bool SapXepTC(monhoc value)
@@ -150,6 +161,16 @@ namespace CTDL_exam
             }
         }
 
+        public string PrintTC(Node parent)
+        {
+            if (parent != null)
+            {
+                PrintTC(parent.LeftNode);
+                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getTC();
+                PrintTC(parent.RightNode);
+            }
+            return str;
+        }
         
         //Sắp xếp theo mã môn học
         private bool SapXepID(monhoc value)
@@ -189,7 +210,16 @@ namespace CTDL_exam
                 SapXepID(parent.RightNode,tree1);
             }
         }
-
+        public string PrintID(Node parent)
+        {
+            if (parent != null)
+            {
+                PrintID(parent.LeftNode);
+                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getID();
+                PrintID(parent.RightNode);
+            }
+            return str;
+        }
 
         // Thêm phần tử
         public bool Insert(monhoc value)
@@ -236,10 +266,14 @@ namespace CTDL_exam
         public string Detail ()
         {
             UI.WriteLine("Nhập mã môn cần hiển thị: ");
-            Console.SetCursorPosition(31, 22 + CountNode(this.Root));
+            Console.SetCursorPosition(31, 25 + CountNode(this.Root));
 
             str = Console.ReadLine();
-            str = PrintDetail(FindTheoMaMon(str));
+            if (FindTheoMaMon(str) == null)
+                str = "Không tìm thấy mã môn";
+            else
+                str = PrintDetail(FindTheoMaMon(str));
+
             return str;
         }
         public string PrintDetail(Node parent)
@@ -263,7 +297,7 @@ namespace CTDL_exam
             if (parent != null)
             {
                 PrintName(parent.LeftNode);
-                str = str + "\n" + parent.Data.getName();
+                str = str + "\n" +  parent.Data.getID().PadRight(6) + parent.Data.getName();
                 PrintName(parent.RightNode);
             }
             return str;
@@ -330,13 +364,17 @@ namespace CTDL_exam
         }
 
         // Xóa nút
-        public void Remove(string value)
+        public bool Remove(string value)
         {
-            this.Root = Remove(this.Root, value);
-            if (Remove(this.Root, value) == null)
+            if (FindTheoMaMon(value) == null)
             {
-                Console.WriteLine("Xóa không thành công");
+                UI.WriteLine("\nKhông tìm thấy " + value);
+                return false;
             }
+            else
+                this.Root = Remove(this.Root, value);
+            
+            return true;
         }
 
         private Node Remove(Node parent, string key)
@@ -356,7 +394,119 @@ namespace CTDL_exam
             return parent;
         }
 
+        public void Themphantu(BinarySearchTree tree)
+        {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+
+            UI.WriteLine("\nThêm môn");
+            string[] Title = { "  Mã môn", "  Tên môn", "  Số tín chỉ", "  Bắt đầu", "  Kết thúc", "  Tên giảng viên", "  Điểm môn học" };
+            string[] Arr = new string[7];
+            for (int i = 0; i < 7; i++)
+            {
+                UI.ReadLine(Title[i], ref Arr[i]);
+            }
+            tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
+            UI.WriteLine("Thêm môn thành công !");
+        }
+
+        public bool Suaphantu(BinarySearchTree tree)
+        {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
+
+            string maMonHoc = "";
+            UI.ReadLine("Nhập mã môn cần sửa", ref maMonHoc);
+
+            if (tree.Remove(maMonHoc) == false )
+            {
+                UI.WriteLine("Sửa môn thất bại !");
+                return false;
+            }
+            else
+            UI.WriteLine("Chỉnh sửa môn " + maMonHoc);
+            string[] Title = { "  Mã môn", "  Tên môn", "  Số tín chỉ", "  Bắt đầu", "  Kết thúc", "  Tên giảng viên", "  Điểm môn học" };
+            string[] Arr = new string[7];
+            Arr[0] = maMonHoc;
+            for (int i = 1; i < Arr.Length; i++)
+            {
+                UI.ReadLine(Title[i], ref Arr[i]);
+            }
+            tree.Insert(new monhoc(Arr[0], Arr[1], int.Parse(Arr[2]), Arr[3], Arr[4], Arr[5], float.Parse(Arr[6])));
+            UI.WriteLine("Sửa môn thành công !");
+            return true;
+        }
+
+        public bool Xoaphantu (BinarySearchTree tree)
+        {
+            string del = ""; 
+            UI.ReadLine("Nhập mã môn muốn xóa", ref del);
+            if (Remove(del) == true)
+                UI.WriteLine("\nXóa thành công !");
+            return true;
+        }
+    
+        public bool Timkiem (BinarySearchTree tree)
+        {
+            UI.TextCenter("Giá trị tìm kiếm");
+            UI.WriteLine("1. Theo mã môn");
+            UI.WriteLine("2. Theo tên giảng viên");
+            string value = "";
+            UI.ReadLine("Chọn loại giá trị", ref value);
+            int val = int.Parse(value);
+            switch(val)
+            {
+                case 1:
+                    UI.ReadLine("Nhập mã môn", ref value);
+                    UI.WriteLine(tree.PrintDetail(tree.FindTheoMaMon(value))); 
+                    break;
+
+                case 2:
+                    UI.ReadLine("Nhập tên giảng viên", ref value);
+                    UI.WriteLine(tree.FindTheoGiangVien(value));
+                    break;
+
+                default: return false;
+            }
+            return true;
+        }
+
+        public bool Sapxep (BinarySearchTree tree)
+        {
+            str = "";
+            BinarySearchTree treeClone;
+            treeClone = new BinarySearchTree();
+
+            UI.TextCenter("Giá trị sắp xếp");
+            UI.WriteLine("1. Theo ngày");
+            UI.WriteLine("2. Theo tín chỉ");
+            UI.WriteLine("3. Theo mã môn");
+            string value = "";
+            UI.ReadLine("Chọn loại giá trị", ref value);
+            int val = int.Parse(value);
+
+            switch(val)
+            {
+                case 1:
+                    treeClone.SapXepDays(tree.Root,treeClone);
+                    UI.WriteLine(treeClone.PrintDays(treeClone.Root));
+                    break;
+
+                case 2:
+                    treeClone.SapXepTC(tree.Root,treeClone);
+                    UI.WriteLine(treeClone.PrintTC(treeClone.Root));
+                    break;
+                
+                case 3:
+                    treeClone.SapXepID(tree.Root,treeClone);
+                    UI.WriteLine(treeClone.PrintID(treeClone.Root));
+                    break;
+
+                default: return false;
+            }
+
+            return true;
+        }
 
     }
-
 }
