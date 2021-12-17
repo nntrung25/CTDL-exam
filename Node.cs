@@ -266,7 +266,7 @@ namespace CTDL_exam
         public string Detail ()
         {
             UI.WriteLine("Nhập mã môn cần hiển thị: ");
-            Console.SetCursorPosition(31, 25 + CountNode(this.Root));
+            Console.SetCursorPosition(31, 5);
 
             str = Console.ReadLine();
             if (FindTheoMaMon(str) == null)
