@@ -32,6 +32,15 @@ namespace CTDL_exam
             return i;
         }
         
+        public string PrintDetail(Node parent)
+        {
+            if (parent != null)
+            {
+                str = parent.Data.ToString();
+            }
+            return str;
+        }
+
         // Tính điểm trung bình, min max
         float avg, min, max;
 
@@ -60,7 +69,7 @@ namespace CTDL_exam
         }
 
         //Sắp xếp theo ngày 
-        private bool InsertWithDays (monhoc value)
+        private bool SapXepDays (monhoc value)
         {
             Node before = null, after = this.Root;
             while (after != null)
@@ -103,25 +112,19 @@ namespace CTDL_exam
             else
                 return string.Compare(A[0], B[0]);
         }
-        public void SapXepDays (Node parent, BinarySearchTree tree1)
+        public void HamSapXep (Node parent, BinarySearchTree tree1, int val)
         {
             if (parent != null)
             {
-                SapXepDays(parent.LeftNode,tree1);
-                tree1.InsertWithDays(parent.Data);
-                SapXepDays(parent.RightNode,tree1);
+                HamSapXep(parent.LeftNode,tree1, val);
+                switch (val)
+                {
+                    case 1: tree1.SapXepDays(parent.Data); break;
+                    case 2: tree1.SapXepTC(parent.Data); break;
+                    case 3: tree1.SapXepID(parent.Data); break;
+                }
+                HamSapXep(parent.RightNode,tree1, val);
             }
-        }
-
-        public string PrintDays(Node parent)
-        {
-            if (parent != null)
-            {
-                PrintDays(parent.LeftNode);
-                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getStart();
-                PrintDays(parent.RightNode);
-            }
-            return str;
         }
 
 
@@ -151,27 +154,7 @@ namespace CTDL_exam
             }
             return true;
         }
-        public void SapXepTC(Node parent,BinarySearchTree tree1)
-        {
-            if (parent != null)
-            {
-                SapXepTC(parent.LeftNode,tree1);
-                tree1.SapXepTC(parent.Data);
-                SapXepTC(parent.RightNode,tree1);
-            }
-        }
 
-        public string PrintTC(Node parent)
-        {
-            if (parent != null)
-            {
-                PrintTC(parent.LeftNode);
-                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getTC();
-                PrintTC(parent.RightNode);
-            }
-            return str;
-        }
-        
         //Sắp xếp theo mã môn học
         private bool SapXepID(monhoc value)
         {
@@ -201,22 +184,21 @@ namespace CTDL_exam
             }
             return true;
         }
-        public void SapXepID(Node parent,BinarySearchTree tree1)
+
+        // In sắp xếp
+        public string PrintSapXep(Node parent, int val)
         {
             if (parent != null)
             {
-                SapXepID(parent.LeftNode,tree1);
-                tree1.SapXepID(parent.Data);
-                SapXepID(parent.RightNode,tree1);
-            }
-        }
-        public string PrintID(Node parent)
-        {
-            if (parent != null)
-            {
-                PrintID(parent.LeftNode);
-                str += "\n" + parent.Data.getName().PadRight(20) + parent.Data.getID();
-                PrintID(parent.RightNode);
+                PrintSapXep(parent.LeftNode, val);
+                str += "\n" + parent.Data.getName().PadRight(20);
+                switch(val)
+                {
+                    case 1: str += parent.Data.getStart(); break;
+                    case 2: str += parent.Data.getTC(); break;
+                    case 3: str += parent.Data.getID(); break;
+                }
+                PrintSapXep(parent.RightNode, val);
             }
             return str;
         }
@@ -276,14 +258,6 @@ namespace CTDL_exam
 
             return str;
         }
-        public string PrintDetail(Node parent)
-        {
-            if (parent != null)
-            {
-                str = parent.Data.ToString();
-            }
-            return str;
-        }
 
         string str;
         public string PrintNameInOrder (Node parent)
@@ -327,40 +301,29 @@ namespace CTDL_exam
             Console.InputEncoding = System.Text.Encoding.Unicode;
 
             str = "";
-            FindTheoGiangVien(value, this.Root);
+            str = FindTheoGiangVien(value, this.Root);
             if (str == "")
                 str = "Không có giá trị phù hợp";
             return str;
         }
 
-        private Node FindTheoGiangVien(string value, Node parent)
+        private string FindTheoGiangVien(string value, Node parent)
         {
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            Console.InputEncoding = System.Text.Encoding.Unicode;
-
             if (parent != null)
             {
                 FindTheoGiangVien(value, parent.LeftNode);
+                
                 if (parent.Data.getTeacher().ToLower().Contains(value.ToLower()) == true)
-                    str = str + parent.Data.getName() + "\n";
+                {
+                    if (str != "")
+                        str += "\n";
+                    
+                    str = str + parent.Data.getName().PadRight(20) + parent.Data.getTeacher();
+                }
                 FindTheoGiangVien(value, parent.RightNode);
             }
 
-            return null;
-        }
-
-
-
-        // Tìm phần tử min, là phần tử đầu tiên khi duyệt cây, mặc định sắp xếp theo mã môn
-        private monhoc MinOfNode(Node node)
-        {
-            monhoc min = node.Data;
-            while (node.RightNode != null)
-            {
-                min = node.RightNode.Data;
-                node = node.RightNode;
-            }
-            return min;
+            return str;
         }
 
         // Xóa nút
@@ -376,7 +339,6 @@ namespace CTDL_exam
             
             return true;
         }
-
         private Node Remove(Node parent, string key)
         {
             if (parent == null) return parent;
@@ -393,7 +355,19 @@ namespace CTDL_exam
             }
             return parent;
         }
+        private monhoc MinOfNode(Node node)
+        {
+            monhoc min = node.Data;
+            while (node.RightNode != null)
+            {
+                min = node.RightNode.Data;
+                node = node.RightNode;
+            }
+            return min;
+        }
 
+
+        // Các hàm chức năng
         public void Themphantu(BinarySearchTree tree)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
@@ -462,8 +436,10 @@ namespace CTDL_exam
                     break;
 
                 case 2:
+                    tree.FindTheoGiangVien("");
                     UI.ReadLine("Nhập tên giảng viên", ref value);
-                    UI.WriteLine(tree.FindTheoGiangVien(value));
+                    str = tree.FindTheoGiangVien(value);
+                    UI.WriteLine(str);
                     break;
 
                 default: return false;
@@ -485,25 +461,14 @@ namespace CTDL_exam
             UI.ReadLine("Chọn loại giá trị", ref value);
             int val = int.Parse(value);
 
-            switch(val)
+            if (val != 1 && val != 2 && val != 3)
             {
-                case 1:
-                    treeClone.SapXepDays(tree.Root,treeClone);
-                    UI.WriteLine(treeClone.PrintDays(treeClone.Root));
-                    break;
-
-                case 2:
-                    treeClone.SapXepTC(tree.Root,treeClone);
-                    UI.WriteLine(treeClone.PrintTC(treeClone.Root));
-                    break;
-                
-                case 3:
-                    treeClone.SapXepID(tree.Root,treeClone);
-                    UI.WriteLine(treeClone.PrintID(treeClone.Root));
-                    break;
-
-                default: return false;
+                UI.WriteLine("\nĐã xảy ra lỗi...");
+                return false;
             }
+            treeClone.HamSapXep(tree.Root,treeClone, val);
+            
+            UI.WriteLine(treeClone.PrintSapXep(treeClone.Root, val));
 
             return true;
         }

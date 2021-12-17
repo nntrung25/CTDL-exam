@@ -35,7 +35,7 @@ namespace CTDL_exam
             UI.DashBot();
 
             UI.DashTop();
-            UI.TextCenter("DỮ LIỆU CÓ SẴN");
+            UI.TextCenter("DỮ LIỆU");
             UI.WriteLine(monhoctree.PrintNameInOrder(monhoctree.Root));
             UI.DashBot();
 

@@ -76,7 +76,7 @@ namespace CTDL_exam
             
             string a;
             a = string.Format("\nMôn {0}, mã môn {1}, {2} tín chỉ", this.name, this.id, this.tc);
-            a += string.Format("\nBắt đầu {0}, kết thúc {1}", this.start, this.end);
+            a += string.Format("\nThời gian học {0} - {1}", this.start, this.end);
             a += string.Format("\nGiảng viên {0}\n", this.gv);
             a += string.Format("Điểm: {0}", this.gpa);
             return a;

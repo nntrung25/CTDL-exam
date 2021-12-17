@@ -25,6 +25,7 @@ namespace CTDL_exam
             Console.WriteLine(str);
         }
 
+        // UI.WriteLine
         // Căn trái
         public static void WriteLine (string str)
         {
@@ -35,16 +36,6 @@ namespace CTDL_exam
             }
 
         }
-
-        public static void Write (string str)
-        {
-            str = "    " + str;
-            str = str.PadRight(len - 2);
-            str = "|" + str + "|";
-            Console.Write(str);
-        }
-
-        // UI.WriteLine
 
         private static void Text (string str)
         {
@@ -71,6 +62,7 @@ namespace CTDL_exam
             Console.WriteLine(str);
         }
 
+        // Đọc dữ liệu
         public static void ReadLine (string content, ref string data)
         {
             content = "|" + "    " + content + ": ";
