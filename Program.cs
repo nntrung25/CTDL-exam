@@ -12,11 +12,14 @@ namespace CTDL_exam
         static void InMenu ()
         {
             Console.Clear();
-            UI.DashTop();
-            UI.TextCenter("Dữ liệu có sẵn");
-            UI.WriteLine(monhoctree.PrintNameInOrder(monhoctree.Root));
-            UI.DashBot();
 
+            UI.DashTop();
+            UI.WriteLine("Chọn chức năng: ");
+            for (int i = 0; i < 11; i++)
+            {
+                UI.WriteLine("");
+            }
+            UI.DashBot();
 
             UI.DashTop();
             UI.TextCenter("Menu");
@@ -31,11 +34,8 @@ namespace CTDL_exam
             UI.DashBot();
 
             UI.DashTop();
-            UI.WriteLine("Chọn chức năng: ");
-            for (int i = 0; i < 11; i++)
-            {
-                UI.WriteLine("");
-            }
+            UI.TextCenter("Dữ liệu có sẵn");
+            UI.WriteLine(monhoctree.PrintNameInOrder(monhoctree.Root));
             UI.DashBot();
 
         }
@@ -51,7 +51,7 @@ namespace CTDL_exam
             FileData.ReadFile(monhoctree);
 nhan:       
             InMenu();
-            Console.SetCursorPosition(21, 21 + monhoctree.CountNode(monhoctree.Root));
+            Console.SetCursorPosition(21, 2);
             int n = int.Parse(Console.ReadLine());
 
 /* 
@@ -85,6 +85,8 @@ nhan:
 
             // Xong nhớ ghi file vào text
             FileData.WriteFile(monhoctree);
+            Console.Clear();
+            Console.WriteLine("-----Kết thúc chương trình-----");
             
         }
     }
