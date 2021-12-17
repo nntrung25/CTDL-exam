@@ -7,6 +7,7 @@ namespace CTDL_exam
     {
         public static BinarySearchTree monhoctree = new BinarySearchTree();
         public static int len = 50;
+        public static string data;
 
         // In menu
         static void InMenu ()
@@ -14,8 +15,7 @@ namespace CTDL_exam
             Console.Clear();
 
             UI.DashTop();
-            UI.WriteLine("Chọn chức năng: ");
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 12; i++)
             {
                 UI.WriteLine("");
             }
@@ -51,8 +51,11 @@ namespace CTDL_exam
             FileData.ReadFile(monhoctree);
 nhan:       
             InMenu();
-            Console.SetCursorPosition(21, 2);
-            int n = int.Parse(Console.ReadLine());
+
+            Console.SetCursorPosition(0, 2);
+            UI.ReadLine("Chọn chức năng", ref data);
+
+            int n = int.Parse(data);
 
 /* 
             1. Hiển thị chi tiết một môn học
