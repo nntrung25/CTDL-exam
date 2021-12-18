@@ -2,16 +2,36 @@ Tạo thêm class mới hay chức năng gì thì ghi cách sử dụng vô đâ
 BinarySearchTree tree
 
 Program.cs
-    Themphantu(tree);
+    InMenu();
+    Main();
+
 monhoc.cs
-    Get...
-    ToString()
+    getID();
+    getName();
+    getTC();
+    getStart()
+    getEnd();
+    getTeacher();
+    getGPA();
+    ToString();
+
 FileData.cs
     FileData.ReadFile(tree);
     FileData.WriteFile(tree);
+
 Node.cs
-    tree.Remove("mã-môn");
-    tree.TraverseInOrder(tree.Root);
-    tree.Insert(monhoc value)
-    tree.CountNode(tree.Root);
-    tree.Find("mã-môn")
+    tree.Detail();
+    tree.Themphantu(tree);
+    tree.Themphantu(tree);
+    tree.Suaphantu(tree);
+    tree.Xoaphantu(tree);
+    tree.Timkiem(tree);
+    tree.Sapxep(tree);
+    tree.Scoring(tree.Root);
+
+UserInterface.cs
+    UI.DashTop();
+    UI.DashBot();
+    UI.TextCenter(str);
+    UI.WriteLine(str);
+    UI.ReadLine(str);
