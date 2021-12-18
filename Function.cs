@@ -5,6 +5,7 @@ namespace CTDL_exam
     class Function
     {
         static BinarySearchTree tree = Program.monhoctree;
+        public static BinarySearchTree treeClone;
 
         static string str = "";
         static float avg, min, max;
@@ -53,7 +54,7 @@ namespace CTDL_exam
         }
         private static bool SapXepDays (monhoc value)
         {
-            Node before = null, after = tree.Root;
+            Node before = null, after = treeClone.Root;
             while (after != null)
             {
                 if (CompareDay(value.getStart(),after.Data.getStart())==0)
@@ -68,8 +69,8 @@ namespace CTDL_exam
 
             Node newNode = new Node();
             newNode.Data = value;
-            if (tree.Root == null) //empty?
-                tree.Root = newNode;
+            if (treeClone.Root == null) //empty?
+                treeClone.Root = newNode;
             else
             {
                 if (CompareDay(value.getStart(),before.Data.getStart())==-1)
@@ -82,7 +83,7 @@ namespace CTDL_exam
 
         private static bool SapXepTC(monhoc value)
         {
-            Node before = null, after = tree.Root;
+            Node before = null, after = treeClone.Root;
             while (after != null)
             {
                 before = after;
@@ -94,8 +95,8 @@ namespace CTDL_exam
 
             Node newNode = new Node();
             newNode.Data = value;
-            if (tree.Root == null) //empty?
-                tree.Root = newNode;
+            if (treeClone.Root == null) //empty?
+                treeClone.Root = newNode;
             else
             {
                 if ((int)value.getTC() <= before.Data.getTC())
@@ -108,7 +109,7 @@ namespace CTDL_exam
 
         private static bool SapXepID(monhoc value)
         {
-            Node before = null, after = tree.Root;
+            Node before = null, after = treeClone.Root;
             while (after != null)
             {
                 if (string.Compare(value.getName(), after.Data.getName()) == 0)
@@ -123,8 +124,8 @@ namespace CTDL_exam
 
             Node newNode = new Node();
             newNode.Data = value;
-            if (tree.Root == null) //empty?
-                tree.Root = newNode;
+            if (treeClone.Root == null) //empty?
+                treeClone.Root = newNode;
             else
             {
                 if (string.Compare(value.getName(), before.Data.getName()) == -1)
@@ -327,7 +328,6 @@ namespace CTDL_exam
         public static bool Sapxep (BinarySearchTree tree)
         {
             str = "";
-            BinarySearchTree treeClone;
             treeClone = new BinarySearchTree();
 
             UI.TextCenter("Giá trị sắp xếp");
