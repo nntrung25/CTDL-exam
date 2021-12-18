@@ -1,5 +1,7 @@
 cslt~Cơ Sở Lập Trình~3~09/08/2021~04/10/2021~Đặng Ngọc Hoàng Thành~85
 ctdl~Cấu Trúc Dữ Liệu~3~13/10/2021~01/12/2021~Đặng Ngọc Hoàng Thành~85
 eng~Tiếng Anh~4~10/08/2021~26/10/2021~Trần Thị Phỉ~80
+m4t~Toán Tin~3~15/10/2021~03/12/2021~Huỳnh Văn Đức~7.5
 mmt~Mạng Máy Tính~3~13/08/2021~08/10/2021~Trần Lê Phúc Thịnh~85
+nhap~nháp~1~1~1~1~1
 tthcm~Tư Tưởng HCM~2~22/09/2021~27/10/2021~Đỗ Minh Tứ~100

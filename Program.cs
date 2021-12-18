@@ -36,7 +36,7 @@ namespace CTDL_exam
 
             UI.DashTop();
             UI.TextCenter("DỮ LIỆU");
-            UI.WriteLine(monhoctree.PrintNameInOrder(monhoctree.Root));
+            UI.WriteLine(Function.PrintNameInOrder(monhoctree.Root));
             UI.DashBot();
 
         }
@@ -67,14 +67,15 @@ nhan:
  */
             switch (data)
             {
-                case "1": UI.WriteLine(monhoctree.Detail());  break;
-                case "2": monhoctree.Themphantu(monhoctree); break;
-                case "3": monhoctree.Suaphantu(monhoctree); break;
-                case "4": monhoctree.Xoaphantu(monhoctree); break;
-                case "5": monhoctree.Timkiem(monhoctree); break;
-                case "6": monhoctree.Sapxep(monhoctree); break;
+                case "1": UI.WriteLine(Function.Detail());  break;
+                case "2": Function.Themphantu(monhoctree); break;
+                case "3": Function.Suaphantu(monhoctree); break;
+                case "4": Function.Xoaphantu(monhoctree); break;
+                case "5": Function.Timkiem(monhoctree); break;
+                case "6": Function.Sapxep(monhoctree); break;
+                
 
-                case "7": UI.WriteLine(monhoctree.Scoring(monhoctree.Root)); break;
+                case "7": UI.WriteLine(Function.Scoring(monhoctree.Root)); break;
 
                 default: if (data != "0") UI.WriteLine("Nhập lỗi..."); break;
             }
