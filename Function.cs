@@ -7,8 +7,10 @@ namespace CTDL_exam
         static BinarySearchTree tree = Program.monhoctree;
 
         static string str = "";
-        // Tính điểm trung bình, min max
         static float avg, min, max;
+
+
+        // Tính điểm trung bình, min max        
         public static string Scoring (Node parent)
         {
             avg = 0f; min = 100f; max = 0f;
@@ -33,8 +35,7 @@ namespace CTDL_exam
         }
 
 
-        // SẮP XẾP
-        //Sắp xếp theo ngày 
+        // Sắp xếp
         private static int CompareDay (string strA, string strB)
         {
             string[] A , B;
@@ -79,7 +80,6 @@ namespace CTDL_exam
             return true;
         }
 
-        //Sắp xếp theo mã TC 
         private static bool SapXepTC(monhoc value)
         {
             Node before = null, after = tree.Root;
@@ -106,7 +106,6 @@ namespace CTDL_exam
             return true;
         }
 
-        //Sắp xếp theo mã môn học
         private static bool SapXepID(monhoc value)
         {
             Node before = null, after = tree.Root;
@@ -171,8 +170,27 @@ namespace CTDL_exam
         }
 
 
-        // Duyệt nút
-        // Duyệt cây theo thứ tự bé -> lớn
+        // In tên cho menu
+        public static string PrintNameInOrder (Node parent)
+        {
+            str = "";
+            str = PrintName(parent);
+            return str;
+        }
+        private static string PrintName (Node parent)
+        {
+            if (parent != null)
+            {
+                PrintName(parent.LeftNode);
+                str = str + "\n" +  parent.Data.getID().PadRight(6) + parent.Data.getName();
+                PrintName(parent.RightNode);
+            }
+            return str;
+        }
+
+        // Chức năng
+
+        // Hiển thị chi tiết
         private static string PrintDetail(Node parent)
         {
             if (parent != null)
@@ -196,25 +214,6 @@ namespace CTDL_exam
         }
 
 
-        // In tên cho menu
-        public static string PrintNameInOrder (Node parent)
-        {
-            str = "";
-            str = PrintName(parent);
-            return str;
-        }
-        private static string PrintName (Node parent)
-        {
-            if (parent != null)
-            {
-                PrintName(parent.LeftNode);
-                str = str + "\n" +  parent.Data.getID().PadRight(6) + parent.Data.getName();
-                PrintName(parent.RightNode);
-            }
-            return str;
-        }
-
-        // Các hàm chức năng
         public static void Themphantu(BinarySearchTree tree)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
