@@ -32,18 +32,9 @@ namespace CTDL_exam
             return i;
         }
         
-        public string PrintDetail(Node parent)
-        {
-            if (parent != null)
-            {
-                str = parent.Data.ToString();
-            }
-            return str;
-        }
 
         // Tính điểm trung bình, min max
         float avg, min, max;
-
         public string Scoring (Node parent)
         {
             avg = 0f; min = 100f; max = 0f;
@@ -54,7 +45,6 @@ namespace CTDL_exam
             str += "Điểm min: " + min + "\n";
             return str;
         }
-
         private void Score (Node parent)
         {
             if (parent != null)
@@ -68,6 +58,8 @@ namespace CTDL_exam
             }
         }
 
+
+        // SẮP XẾP
         //Sắp xếp theo ngày 
         private bool SapXepDays (monhoc value)
         {
@@ -112,21 +104,6 @@ namespace CTDL_exam
             else
                 return string.Compare(A[0], B[0]);
         }
-        public void HamSapXep (Node parent, BinarySearchTree tree1, int val)
-        {
-            if (parent != null)
-            {
-                HamSapXep(parent.LeftNode,tree1, val);
-                switch (val)
-                {
-                    case 1: tree1.SapXepDays(parent.Data); break;
-                    case 2: tree1.SapXepTC(parent.Data); break;
-                    case 3: tree1.SapXepID(parent.Data); break;
-                }
-                HamSapXep(parent.RightNode,tree1, val);
-            }
-        }
-
 
         //Sắp xếp theo mã TC 
         private bool SapXepTC(monhoc value)
@@ -185,6 +162,22 @@ namespace CTDL_exam
             return true;
         }
 
+        // Hàm tổng sắp xếp
+        public void HamSapXep (Node parent, BinarySearchTree tree1, int val)
+        {
+            if (parent != null)
+            {
+                HamSapXep(parent.LeftNode,tree1, val);
+                switch (val)
+                {
+                    case 1: tree1.SapXepDays(parent.Data); break;
+                    case 2: tree1.SapXepTC(parent.Data); break;
+                    case 3: tree1.SapXepID(parent.Data); break;
+                }
+                HamSapXep(parent.RightNode,tree1, val);
+            }
+        }
+
         // In sắp xếp
         public string PrintSapXep(Node parent, int val)
         {
@@ -203,7 +196,8 @@ namespace CTDL_exam
             return str;
         }
 
-        // Thêm phần tử
+
+        // THÊM PHẦN TỬ
         public bool Insert(monhoc value)
         {
             Node before = null, after = this.Root;
@@ -235,16 +229,14 @@ namespace CTDL_exam
 
         // Duyệt nút
         // Duyệt cây theo thứ tự bé -> lớn
-        public void PrintDetailInOrder(Node parent)
+        public string PrintDetail(Node parent)
         {
             if (parent != null)
             {
-                PrintDetailInOrder(parent.LeftNode);
-                Console.Write(parent.Data + " ");
-                PrintDetailInOrder(parent.RightNode);
+                str = parent.Data.ToString();
             }
+            return str;
         }
-
         public string Detail ()
         {
             UI.WriteLine("Nhập mã môn cần hiển thị: ");
@@ -260,6 +252,8 @@ namespace CTDL_exam
         }
 
         string str;
+
+        // In tên cho menu
         public string PrintNameInOrder (Node parent)
         {
             str = "";
@@ -277,10 +271,10 @@ namespace CTDL_exam
             return str;
         }
 
+
         // Tìm kiếm theo mã môn học
         public Node FindTheoMaMon(string value)
         { return this.FindTheoMaMon(value, this.Root); }
-
         private Node FindTheoMaMon(string value, Node parent)
         {
             if (parent != null)
@@ -294,6 +288,7 @@ namespace CTDL_exam
             return null;
         }
 
+
         //Tìm kiếm theo tên giảng viên
         public string FindTheoGiangVien(string value)
         {
@@ -306,7 +301,6 @@ namespace CTDL_exam
                 str = "Không có giá trị phù hợp";
             return str;
         }
-
         private string FindTheoGiangVien(string value, Node parent)
         {
             if (parent != null)
@@ -325,6 +319,7 @@ namespace CTDL_exam
 
             return str;
         }
+
 
         // Xóa nút
         public bool Remove(string value)
